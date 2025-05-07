@@ -1,603 +1,511 @@
-<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Departamento en Mar del Plata - Venta/Alquiler</title>
-  <!-- Google Fonts: Elegant font -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet" />
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Departamento en Mar del Plata - Alquiler y Venta
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&amp;family=Roboto&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <style>
-    /* Reset and base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
+   /* Fonts */
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f7f9fb;
-      color: #3a4750;
-      line-height: 1.6;
-      font-size: 16px;
-      overflow-x: hidden;
+      background-color: #f9fafb;
+      color: #374151;
     }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: #2c82c9;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      color: #2c82c9;
-      margin-bottom: 1rem;
-    }
-
-    /* Container */
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-      padding-bottom: 3rem;
-    }
-
-    /* Navigation */
-    nav {
-      width: 100%;
-      background: #1e3a5f;
-      color: white;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-      transition: background 0.4s ease;
-    }
-
-    nav.scrolled {
-      background: #143450;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-    }
-
-    .nav-inner {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.8rem 1rem;
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: white;
-      user-select: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      font-weight: 500;
-      font-size: 1rem;
-      color: white;
-      position: relative;
-      padding-bottom: 2px;
-    }
-
-    .nav-links a::after {
-      content: '';
-      display: block;
-      height: 2px;
-      width: 0%;
-      background: #76b5f2;
-      transition: width 0.3s ease;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      border-radius: 2px;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    /* Hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-      user-select: none;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background: white;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    /* Mobile menu */
-    @media (max-width: 768px) {
-      .nav-links {
-        position: fixed;
-        top: 60px;
-        right: 0;
-        height: calc(100vh - 60px);
-        width: 200px;
-        background: #1e3a5f;
-        flex-direction: column;
-        padding-top: 2rem;
-        gap: 1.5rem;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        box-shadow: -2px 0 20px rgba(20,52,80,.6);
-        z-index: 999;
-      }
-
-      .nav-links.open {
-        transform: translateX(0);
-      }
-
-      .hamburger {
-        display: flex;
-      }
-    }
-
-    /* Hamburger animation when toggled */
-    .hamburger.active div:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    .hamburger.active div:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburger.active div:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    /* Hero / Inicio section */
-    #inicio {
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      color: white;
-      text-align: center;
-      padding: 0 1rem;
-    }
-
-    #inicio::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; right: 0; bottom: 0;
-      background: rgba(28, 48, 73, 0.7);
-      z-index: 0;
-    }
-
-    #inicio .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-      animation: fadeInUp 1s ease forwards;
-      opacity: 0;
-      transform: translateY(30px);
-    }
-
-    #inicio h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
-    }
-
-    #inicio p {
-      font-size: 1.3rem;
-      letter-spacing: 1px;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-    }
-
-    /* Keyframe fadeInUp */
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Galería section */
-    #galeria {
-      padding: 4rem 0 2rem;
-      background: #fff;
-      text-align: center;
-    }
-
-    #galeria h2 {
-      margin-bottom: 2rem;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 1rem;
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 1rem;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      border-radius: 12px;
-      object-fit: cover;
-      box-shadow: 0 0 15px rgba(44,130,201,0.3);
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .gallery-grid img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 25px rgba(44,130,201,0.6);
-    }
-
-    /* Servicios/Comodidades section */
-    #servicios {
-      background: #f0f4f8;
-      padding: 4rem 0 3rem;
-      text-align: center;
-    }
-
-    #servicios h2 {
-      margin-bottom: 1.5rem;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-      gap: 2rem;
-      max-width: 1000px;
-      margin: auto;
-      padding: 0 1rem;
-    }
-
-    .service-item {
-      background: white;
-      border-radius: 12px;
-      padding: 2rem 1.5rem;
-      box-shadow: 0 0 20px rgba(44,130,201,0.15);
-      transition: box-shadow 0.4s ease, transform 0.3s ease;
-      cursor: default;
-    }
-
-    .service-item:hover {
-      box-shadow: 0 8px 30px rgba(44,130,201,0.4);
-      transform: translateY(-8px);
-    }
-
-    .service-item h3 {
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-      color: #215a8c;
-    }
-
-    /* Location section */
-    #ubicacion {
-      padding: 4rem 0;
-      text-align: center;
-      background: white;
-    }
-
-    #ubicacion h2 {
-      margin-bottom: 2rem;
-    }
-
-    .map-container {
-      max-width: 900px;
-      height: 400px;
-      margin: auto;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 0 25px rgba(44,130,201,0.2);
-      transition: box-shadow 0.3s ease;
-    }
-
-    .map-container:hover {
-      box-shadow: 0 0 45px rgba(44,130,201,0.5);
-    }
-
-    iframe {
-      border: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Contacto section */
-    #contacto {
-      background: #f0f4f8;
-      padding: 4rem 0 3rem;
-      text-align: center;
-    }
-
-    #contacto h2 {
-      margin-bottom: 2rem;
-    }
-
-    form {
-      max-width: 500px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    input, textarea {
-      padding: 0.9rem 1rem;
-      font-size: 1rem;
-      border: 2px solid #cbd7e0;
-      border-radius: 8px;
-      resize: vertical;
-      transition: border-color 0.4s ease;
-      font-family: 'Roboto', sans-serif;
-    }
-
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: #2c82c9;
-      box-shadow: 0 0 8px #2c82c9aa;
-    }
-
-    label {
-      text-align: left;
-      font-weight: 600;
-      color: #2c82c9;
-    }
-
-    button {
-      background: #2c82c9;
-      color: white;
-      border: none;
-      padding: 1rem 0;
-      font-size: 1.2rem;
-      font-weight: 600;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+    h1, h2, h3, h4 {
       font-family: 'Playfair Display', serif;
     }
-
-    button:hover {
-      background: #1b5a8a;
-      box-shadow: 0 8px 30px rgba(27,90,138,0.5);
-    }
-
-    /* Footer */
-    footer {
-      background: #1e3a5f;
-      color: white;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.9rem;
-      user-select: none;
-    }
-
     /* Scroll reveal animations */
     .reveal {
       opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* Responsive typography */
-    @media (max-width: 480px) {
-      #inicio h1 {
-        font-size: 2.3rem;
-      }
-      #inicio p {
-        font-size: 1rem;
-      }
-      .service-item h3 {
-        font-size: 1.1rem;
-      }
+    /* Navbar hamburger animation */
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+      background-color: #1e40af;
+      border-radius: 2px;
     }
-
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    /* Smooth hover scale for images */
+    .hover-scale {
+      transition: transform 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: scale(1.05);
+    }
+    /* Custom scrollbar for gallery */
+    .gallery-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+    .gallery-scroll::-webkit-scrollbar-track {
+      background: #e0e7ff;
+      border-radius: 10px;
+    }
+    .gallery-scroll::-webkit-scrollbar-thumb {
+      background: #3b82f6;
+      border-radius: 10px;
+    }
+    /* WhatsApp floating button */
+    #whatsappButton {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: #25d366;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 100;
+    }
+    #whatsappButton:hover {
+      background-color: #1ebe57;
+    }
+    #whatsappButton i {
+      color: white;
+      font-size: 28px;
+    }
+    /* Scroll to top button */
+    #scrollTopButton {
+      position: fixed;
+      bottom: 90px;
+      right: 24px;
+      background-color: #1e40af;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 100;
+    }
+    #scrollTopButton:hover {
+      background-color: #374151;
+    }
+    #scrollTopButton i {
+      color: white;
+      font-size: 22px;
+    }
+    #scrollTopButton.show {
+      opacity: 1;
+      visibility: visible;
+    }
   </style>
-</head>
-<body>
-
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-inner container">
-      <div class="logo" tabindex="0">MDP Departamentos</div>
-      <div class="nav-links" id="nav-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#galeria">Galería</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#ubicacion">Ubicación</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-      <div class="hamburger" id="hamburger" aria-label="Menu Móvil" aria-expanded="false" role="button" tabindex="0">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+ </head>
+ <body class="antialiased">
+  <!-- Navbar -->
+  <nav class="fixed w-full bg-white shadow-md z-50">
+   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a class="text-2xl font-playfair text-blue-900 font-semibold tracking-wide" href="#inicio">
+     Mar del Plata Home
+    </a>
+    <div class="hidden md:flex space-x-8 text-blue-900 font-semibold text-lg">
+     <a class="hover:text-blue-700 transition" href="#inicio">
+      Inicio
+     </a>
+     <a class="hover:text-blue-700 transition" href="#galeria">
+      Galería
+     </a>
+     <a class="hover:text-blue-700 transition" href="#servicios">
+      Servicios
+     </a>
+     <a class="hover:text-blue-700 transition" href="#ubicacion">
+      Ubicación
+     </a>
+     <a class="hover:text-blue-700 transition" href="#contacto">
+      Contacto
+     </a>
     </div>
+    <button aria-label="Abrir menú" class="md:hidden hamburger focus:outline-none" id="hamburger">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+   </div>
+   <div class="md:hidden bg-white shadow-md max-h-0 overflow-hidden transition-max-height duration-500 ease-in-out" id="mobileMenu">
+    <a class="block px-6 py-3 border-b border-gray-200 text-blue-900 font-semibold hover:bg-blue-50 transition" href="#inicio">
+     Inicio
+    </a>
+    <a class="block px-6 py-3 border-b border-gray-200 text-blue-900 font-semibold hover:bg-blue-50 transition" href="#galeria">
+     Galería
+    </a>
+    <a class="block px-6 py-3 border-b border-gray-200 text-blue-900 font-semibold hover:bg-blue-50 transition" href="#servicios">
+     Servicios
+    </a>
+    <a class="block px-6 py-3 border-b border-gray-200 text-blue-900 font-semibold hover:bg-blue-50 transition" href="#ubicacion">
+     Ubicación
+    </a>
+    <a class="block px-6 py-3 text-blue-900 font-semibold hover:bg-blue-50 transition" href="#contacto">
+     Contacto
+    </a>
+   </div>
   </nav>
-
   <!-- Hero / Inicio -->
-  <section id="inicio" aria-label="Inicio - departamento en Mar del Plata">
-    <div class="hero-content">
-      <h1>Tu Hogar en Mar del Plata</h1>
-      <p>Departamento exclusivo en venta y alquiler, con vistas únicas y comodidades premium.</p>
-    </div>
+  <section class="pt-24 md:pt-32 bg-gradient-to-b from-blue-50 to-white min-h-screen flex flex-col justify-center items-center text-center px-6" id="inicio">
+   <h1 class="text-4xl md:text-6xl font-playfair font-bold text-blue-900 mb-6 reveal" style="transition-delay: 0.1s">
+    Departamento en Mar del Plata
+   </h1>
+   <p class="max-w-3xl text-lg md:text-xl text-blue-700 mb-8 reveal" style="transition-delay: 0.3s">
+    Alquiler y venta de un moderno y elegante departamento con vista al mar,
+      ubicado en el corazón de Mar del Plata, Argentina.
+   </p>
+   <a class="inline-block bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-blue-800 transition reveal" href="#contacto" style="transition-delay: 0.5s">
+    Contáctanos
+   </a>
+   <div class="mt-12 w-full max-w-5xl rounded-lg overflow-hidden shadow-lg reveal" style="transition-delay: 0.7s">
+    <img alt="Vista panorámica del departamento moderno con balcón y vista al mar en Mar del Plata, cielo azul y mar calmo" class="w-full object-cover" height="600" src="https://storage.googleapis.com/a1aa/image/45d5d8d4-f6fc-484c-f3b1-ebf82a4f12e5.jpg" width="1200"/>
+   </div>
   </section>
-
   <!-- Galería -->
-  <section id="galeria" class="container" aria-label="Galería de imágenes del departamento y Mar del Plata">
-    <h2>Galería</h2>
-    <div class="gallery-grid">
-      <img src="https://images.unsplash.com/photo-1600585154815-79b3e1a48ed5?auto=format&fit=crop&w=600&q=80" alt="Sala de estar del departamento moderno y luminosa" loading="lazy" />
-      <img src="https://images.unsplash.com/photo-1560448070-c88e006a6e62?auto=format&fit=crop&w=600&q=80" alt="Cocina instalada con encimeras blancas y muebles de madera clara" loading="lazy" />
-      <img src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?auto=format&fit=crop&w=600&q=80" alt="Vista panorámica de Mar del Plata desde el balcón del departamento" loading="lazy" />
-      <img src="https://images.unsplash.com/photo-1501183638714-2f0a7194323d?auto=format&fit=crop&w=600&q=80" alt="Dormitorio elegante con mucha luz natural" loading="lazy" />
-      <img src="https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=600&q=80" alt="Patio de la ciudad de Mar del Plata con su costa" loading="lazy" />
-      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=80" alt="Baño moderno y espacioso" loading="lazy" />
-    </div>
+  <section class="max-w-7xl mx-auto px-6 py-16" id="galeria">
+   <h2 class="text-3xl font-playfair font-bold text-blue-900 mb-10 text-center reveal">
+    Galería de Imágenes
+   </h2>
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 reveal" style="transition-delay: 0.1s">
+    <img alt="Sala de estar moderna con sofá azul, ventanales grandes con vista al mar y decoración elegante" class="rounded-lg shadow-md hover-scale cursor-pointer" height="400" src="https://storage.googleapis.com/a1aa/image/9064ba1c-9734-42ce-5e88-bc8af5dfb443.jpg" width="600"/>
+    <img alt="Cocina integrada con isla central blanca, electrodomésticos modernos y decoración minimalista" class="rounded-lg shadow-md hover-scale cursor-pointer" height="400" src="https://storage.googleapis.com/a1aa/image/644009c3-e41e-452c-84e1-3bd04df09b56.jpg" width="600"/>
+    <img alt="Dormitorio principal con cama king size, balcón con vista al mar y decoración elegante en tonos azules y blancos" class="rounded-lg shadow-md hover-scale cursor-pointer" height="400" src="https://storage.googleapis.com/a1aa/image/d5dff288-e588-4b6a-e8b5-a921b9e0ed73.jpg" width="600"/>
+    <img alt="Baño moderno con acabados en azul y blanco, ducha de vidrio y accesorios elegantes" class="rounded-lg shadow-md hover-scale cursor-pointer" height="400" src="https://storage.googleapis.com/a1aa/image/89fbc9a0-feb6-42d8-a8d1-ec4db323d4aa.jpg" width="600"/>
+    <img alt="Vista nocturna del departamento con luces encendidas y mar de fondo, cielo estrellado" class="rounded-lg shadow-md hover-scale cursor-pointer" height="400" src="https://storage.googleapis.com/a1aa/image/a871bcef-6b24-4c31-66a9-8114ff793633.jpg" width="600"/>
+    <img alt="Playa de Mar del Plata con arena dorada, olas suaves y cielo azul claro" class="rounded-lg shadow-md hover-scale cursor-pointer" height="400" src="https://storage.googleapis.com/a1aa/image/f710bbf6-8535-4daa-5130-1fcac93e8978.jpg" width="600"/>
+   </div>
   </section>
-
   <!-- Servicios / Comodidades -->
-  <section id="servicios" aria-label="Servicios y comodidades del departamento">
-    <h2>Servicios y Comodidades</h2>
-    <div class="services-grid container">
-      <article class="service-item reveal" tabindex="0">
-        <h3>Wi-Fi de Alta Velocidad</h3>
-        <p>Conexión estable y rápida para trabajar o disfrutar tu tiempo libre.</p>
-      </article>
-      <article class="service-item reveal" tabindex="0">
-        <h3>Seguridad 24/7</h3>
-        <p>Control y monitoreo continuo para tu tranquilidad y de tu familia.</p>
-      </article>
-      <article class="service-item reveal" tabindex="0">
-        <h3>Piscina y Gimnasio</h3>
-        <p>Espacios para relax y entrenar sin salir de tu edificio.</p>
-      </article>
-      <article class="service-item reveal" tabindex="0">
-        <h3>Balcones con Vista al Mar</h3>
-        <p>Despierta cada día con vistas inigualables y aire fresco de la costa.</p>
-      </article>
-      <article class="service-item reveal" tabindex="0">
-        <h3>Cercanía a Servicios</h3>
-        <p>Supermercados, restaurantes y transporte público a minutos.</p>
-      </article>
-      <article class="service-item reveal" tabindex="0">
-        <h3>Estacionamiento Privado</h3>
-        <p>Tu vehículo siempre seguro con acceso exclusivo.</p>
-      </article>
+  <section class="bg-blue-50 py-16 px-6" id="servicios">
+   <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-playfair font-bold text-blue-900 mb-12 text-center reveal">
+     Servicios y Comodidades
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center reveal" style="transition-delay: 0.1s">
+     <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition cursor-default">
+      <i class="fas fa-wifi text-4xl text-blue-700 mb-4">
+      </i>
+      <h3 class="font-semibold text-xl mb-2">
+       Wi-Fi de alta velocidad
+      </h3>
+      <p class="text-gray-600">
+       Conexión estable para trabajar o disfrutar.
+      </p>
+     </div>
+     <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition cursor-default">
+      <i class="fas fa-swimming-pool text-4xl text-blue-700 mb-4">
+      </i>
+      <h3 class="font-semibold text-xl mb-2">
+       Piscina
+      </h3>
+      <p class="text-gray-600">
+       Piscina al aire libre con vista al mar.
+      </p>
+     </div>
+     <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition cursor-default">
+      <i class="fas fa-parking text-4xl text-blue-700 mb-4">
+      </i>
+      <h3 class="font-semibold text-xl mb-2">
+       Estacionamiento
+      </h3>
+      <p class="text-gray-600">
+       Lugar seguro para tu vehículo.
+      </p>
+     </div>
+     <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition cursor-default">
+      <i class="fas fa-dumbbell text-4xl text-blue-700 mb-4">
+      </i>
+      <h3 class="font-semibold text-xl mb-2">
+       Gimnasio
+      </h3>
+      <p class="text-gray-600">
+       Equipado con máquinas modernas.
+      </p>
+     </div>
+     <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition cursor-default">
+      <i class="fas fa-shield-alt text-4xl text-blue-700 mb-4">
+      </i>
+      <h3 class="font-semibold text-xl mb-2">
+       Seguridad 24/7
+      </h3>
+      <p class="text-gray-600">
+       Sistema de vigilancia y portería.
+      </p>
+     </div>
+     <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition cursor-default">
+      <i class="fas fa-couch text-4xl text-blue-700 mb-4">
+      </i>
+      <h3 class="font-semibold text-xl mb-2">
+       Amoblado
+      </h3>
+      <p class="text-gray-600">
+       Muebles modernos y confortables.
+      </p>
+     </div>
+     <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition cursor-default">
+      <i class="fas fa-sun text-4xl text-blue-700 mb-4">
+      </i>
+      <h3 class="font-semibold text-xl mb-2">
+       Balcón con sol
+      </h3>
+      <p class="text-gray-600">
+       Espacio para disfrutar el sol y la vista.
+      </p>
+     </div>
+     <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition cursor-default">
+      <i class="fas fa-paw text-4xl text-blue-700 mb-4">
+      </i>
+      <h3 class="font-semibold text-xl mb-2">
+       Pet Friendly
+      </h3>
+      <p class="text-gray-600">
+       Aceptamos mascotas pequeñas.
+      </p>
+     </div>
     </div>
+   </div>
   </section>
-
   <!-- Ubicación -->
-  <section id="ubicacion" aria-label="Ubicación del departamento en Mar del Plata">
-    <h2>Ubicación</h2>
-    <div class="map-container" role="region" aria-label="Mapa de ubicación en Mar del Plata">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.5760990932414!2d-57.563072684159594!3d-38.00547797964089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584cdf3e8479b17%3A0xca881862a3e3e6de!2sMar%20del%20Plata%2C%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses!2sus!4v1686679146011!5m2!1ses!2sus" 
-        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-hidden="false" tabindex="0"></iframe>
+  <section class="max-w-7xl mx-auto px-6 py-16" id="ubicacion">
+   <h2 class="text-3xl font-playfair font-bold text-blue-900 mb-10 text-center reveal">
+    Ubicación
+   </h2>
+   <div class="flex flex-col md:flex-row md:space-x-10 items-center reveal" style="transition-delay: 0.1s">
+    <div class="md:w-1/2 mb-8 md:mb-0">
+     <p class="text-gray-700 text-lg mb-6">
+      El departamento está ubicado en el centro de Mar del Plata, a pocos metros de la playa, restaurantes, y centros comerciales. Disfruta de la comodidad de vivir cerca de todo.
+     </p>
+     <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li>
+       Playa a 200 metros
+      </li>
+      <li>
+       Restaurantes y bares a 100 metros
+      </li>
+      <li>
+       Transporte público cercano
+      </li>
+      <li>
+       Zona segura y tranquila
+      </li>
+     </ul>
     </div>
+    <div class="md:w-1/2 rounded-lg overflow-hidden shadow-lg w-full h-64 md:h-80">
+     <img alt="Mapa ilustrativo de Mar del Plata con la ubicación exacta del departamento marcado con un pin rojo" class="w-full h-full object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/a466d5d8-9b7b-468f-522f-9609e3586321.jpg" width="600"/>
+    </div>
+   </div>
   </section>
-
   <!-- Contacto -->
-  <section id="contacto" aria-label="Formulario de contacto para interesados">
-    <h2>Contacto</h2>
-    <form id="contact-form" novalidate>
-      <label for="name">Nombre completo</label>
-      <input type="text" id="name" name="name" placeholder="Tu nombre" required aria-required="true" />
-
-      <label for="email">Correo electrónico</label>
-      <input type="email" id="email" name="email" placeholder="tu@email.com" required aria-required="true" />
-
-      <label for="phone">Teléfono (opcional)</label>
-      <input type="tel" id="phone" name="phone" placeholder="+54 9 223..." pattern="[\d\s\+\-]{7,15}" />
-
-      <label for="message">Mensaje</label>
-      <textarea id="message" name="message" rows="5" placeholder="Escribe aquí tu consulta..." required aria-required="true"></textarea>
-
-      <button type="submit" aria-label="Enviar formulario de contacto">Enviar</button>
+  <section class="bg-blue-50 py-16 px-6" id="contacto">
+   <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-playfair font-bold text-blue-900 mb-10 text-center reveal">
+     Contáctanos
+    </h2>
+    <form class="bg-white rounded-lg shadow-lg p-8 space-y-6 reveal" id="contactForm" novalidate="" style="transition-delay: 0.1s">
+     <div>
+      <label class="block text-gray-700 font-semibold mb-2" for="name">
+       Nombre completo
+      </label>
+      <input class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" id="name" name="name" placeholder="Tu nombre" required="" type="text"/>
+      <p class="text-red-600 text-sm mt-1 hidden" id="nameError">
+       Por favor ingresa tu nombre.
+      </p>
+     </div>
+     <div>
+      <label class="block text-gray-700 font-semibold mb-2" for="email">
+       Correo electrónico
+      </label>
+      <input class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" id="email" name="email" placeholder="tu@email.com" required="" type="email"/>
+      <p class="text-red-600 text-sm mt-1 hidden" id="emailError">
+       Por favor ingresa un correo válido.
+      </p>
+     </div>
+     <div>
+      <label class="block text-gray-700 font-semibold mb-2" for="message">
+       Mensaje
+      </label>
+      <textarea class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" id="message" name="message" placeholder="Escribe tu consulta aquí" required="" rows="4"></textarea>
+      <p class="text-red-600 text-sm mt-1 hidden" id="messageError">
+       Por favor ingresa un mensaje.
+      </p>
+     </div>
+     <button class="w-full bg-blue-700 text-white font-semibold py-3 rounded-lg hover:bg-blue-800 transition" type="submit">
+      Enviar
+     </button>
+     <p class="text-green-600 font-semibold mt-4 hidden text-center" id="formSuccess">
+      ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.
+     </p>
     </form>
+   </div>
   </section>
-
-  <!-- Footer -->
-  <footer role="contentinfo">
-    &copy; 2024 Departamento Mar del Plata. Todos los derechos reservados.
+  <footer class="bg-white border-t border-gray-200 py-10 mt-16">
+   <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-center space-y-8 md:space-y-0">
+     <div class="text-center md:text-left text-gray-500 text-sm">
+      © 2024 Mar del Plata Home. Todos los derechos reservados.
+     </div>
+     <div class="flex flex-col md:flex-row md:items-center md:space-x-12 space-y-6 md:space-y-0">
+      <!-- Redes Sociales -->
+      <div class="flex space-x-6 justify-center md:justify-start">
+       <a aria-label="Facebook" class="text-blue-700 hover:text-blue-900 transition text-2xl" href="https://www.facebook.com" rel="noopener noreferrer" target="_blank">
+        <i class="fab fa-facebook-f">
+        </i>
+       </a>
+       <a aria-label="Instagram" class="text-pink-600 hover:text-pink-800 transition text-2xl" href="https://www.instagram.com" rel="noopener noreferrer" target="_blank">
+        <i class="fab fa-instagram">
+        </i>
+       </a>
+       <a aria-label="Twitter" class="text-blue-400 hover:text-blue-600 transition text-2xl" href="https://www.twitter.com" rel="noopener noreferrer" target="_blank">
+        <i class="fab fa-twitter">
+        </i>
+       </a>
+       <a aria-label="LinkedIn" class="text-blue-700 hover:text-blue-900 transition text-2xl" href="https://www.linkedin.com" rel="noopener noreferrer" target="_blank">
+        <i class="fab fa-linkedin-in">
+        </i>
+       </a>
+      </div>
+      <!-- Métodos de Pago -->
+      <div class="flex space-x-6 justify-center md:justify-start items-center">
+       <img alt="Logo de tarjeta Visa azul" class="h-8 w-auto" height="40" src="https://storage.googleapis.com/a1aa/image/3d65a747-f413-40b4-56f4-73ba9a48026e.jpg" width="64"/>
+       <img alt="Logo de tarjeta Mastercard rojo y amarillo" class="h-8 w-auto" height="40" src="https://storage.googleapis.com/a1aa/image/8c3bf523-83a5-4af2-afb9-8de48aa6bf8b.jpg" width="64"/>
+       <img alt="Logo de tarjeta American Express azul claro" class="h-8 w-auto" height="40" src="https://storage.googleapis.com/a1aa/image/f18c3143-68c8-4739-83f7-83f539245ed0.jpg" width="64"/>
+       <img alt="Logo de tarjeta Mercado Pago azul y blanco" class="h-8 w-auto" height="40" src="https://storage.googleapis.com/a1aa/image/c0491d4f-10f3-4b99-ac5c-c463a7386f10.jpg" width="64"/>
+      </div>
+     </div>
+    </div>
+   </div>
   </footer>
-
+  <!-- WhatsApp Floating Button -->
+  <a aria-label="Chat por WhatsApp" href="https://wa.me/5492234567890" id="whatsappButton" target="_blank" rel="noopener noreferrer" title="Chatear por WhatsApp">
+   <i class="fab fa-whatsapp">
+   </i>
+  </a>
+  <!-- Scroll to Top Button -->
+  <button aria-label="Subir al inicio" id="scrollTopButton" title="Subir al inicio" type="button">
+   <i class="fas fa-chevron-up">
+   </i>
+  </button>
   <script>
-    // Toggle mobile menu
+   // Navbar hamburger toggle
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-    function toggleMenu() {
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
-      hamburger.setAttribute('aria-expanded', !expanded);
+    hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
-      navLinks.classList.toggle('open');
-    }
-
-    hamburger.addEventListener('click', toggleMenu);
-    hamburger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleMenu();
-      }
-    });
-
-    // Close mobile menu when link clicked
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      if(window.innerWidth <= 768) {
-        toggleMenu();
-      }
-    }));
-
-    // Change nav background on scroll
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      if(window.scrollY > 50) {
-        nav.classList.add('scrolled');
+      if (mobileMenu.style.maxHeight) {
+        mobileMenu.style.maxHeight = null;
       } else {
-        nav.classList.remove('scrolled');
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
       }
     });
 
-    // Scroll reveal for service items
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
+
     function revealOnScroll() {
-      const reveals = document.querySelectorAll('.reveal');
       const windowHeight = window.innerHeight;
-      reveals.forEach(el => {
+      revealElements.forEach((el) => {
         const elementTop = el.getBoundingClientRect().top;
-        const revealPoint = 150;
-        if(elementTop < windowHeight - revealPoint) {
+        if (elementTop < windowHeight - 100) {
           el.classList.add('active');
         }
       });
     }
-
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('load', revealOnScroll);
 
-    // Contact form validation and submission
-    const form = document.getElementById('contact-form');
-    form.addEventListener('submit', e => {
+    // Contact form validation and submission simulation
+    const form = document.getElementById('contactForm');
+    const nameInput = form.name;
+    const emailInput = form.email;
+    const messageInput = form.message;
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const messageError = document.getElementById('messageError');
+    const formSuccess = document.getElementById('formSuccess');
+
+    function validateEmail(email) {
+      // Simple email regex
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      // Simple validation check is handled by HTML5, here just friendly feedback
-      if (!form.checkValidity()) {
-        alert('Por favor, complete los campos obligatorios correctamente.');
-        return;
+      let valid = true;
+
+      // Reset errors
+      nameError.classList.add('hidden');
+      emailError.classList.add('hidden');
+      messageError.classList.add('hidden');
+      formSuccess.classList.add('hidden');
+
+      if (!nameInput.value.trim()) {
+        nameError.classList.remove('hidden');
+        valid = false;
+      }
+      if (!validateEmail(emailInput.value.trim())) {
+        emailError.classList.remove('hidden');
+        valid = false;
+      }
+      if (!messageInput.value.trim()) {
+        messageError.classList.remove('hidden');
+        valid = false;
       }
 
-      // Simulate form submission / show success
-      alert('Gracias por contactarnos. Te responderemos a la brevedad.');
-      form.reset();
+      if (valid) {
+        // Simulate sending message
+        formSuccess.classList.remove('hidden');
+        form.reset();
+      }
+    });
+
+    // Scroll to top button functionality
+    const scrollTopButton = document.getElementById('scrollTopButton');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopButton.classList.add('show');
+      } else {
+        scrollTopButton.classList.remove('show');
+      }
+    });
+
+    scrollTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
   </script>
-</body>
+ </body>
 </html>
-</content>
-</create_file>
