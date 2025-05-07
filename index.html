@@ -3,7 +3,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>
-   Departamento en Mar del Plata - Alquiler y Venta
+   FG en Mar del Plata - Alquiler y Venta
   </title>
   <script src="https://cdn.tailwindcss.com">
   </script>
@@ -128,7 +128,7 @@
   <nav class="fixed w-full bg-white shadow-md z-50">
    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <a class="text-2xl font-playfair text-blue-900 font-semibold tracking-wide" href="#inicio">
-     Mar del Plata Home
+     FG Home
     </a>
     <div class="hidden md:flex space-x-8 text-blue-900 font-semibold text-lg">
      <a class="hover:text-blue-700 transition" href="#inicio">
@@ -180,7 +180,7 @@
     Departamento en Mar del Plata
    </h1>
    <p class="max-w-3xl text-lg md:text-xl text-blue-700 mb-8 reveal" style="transition-delay: 0.3s">
-    Alquiler y venta de un moderno y elegante departamento con vista al mar,
+    Alquiler y venta de un moderno y elegante departamento,
       ubicado en el corazón de Mar del Plata, Argentina.
    </p>
    <a class="inline-block bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-blue-800 transition reveal" href="#contacto" style="transition-delay: 0.5s">
@@ -320,7 +320,16 @@
      </ul>
     </div>
     <div class="md:w-1/2 rounded-lg overflow-hidden shadow-lg w-full h-64 md:h-80">
-     <img alt="Mapa ilustrativo de Mar del Plata con la ubicación exacta del departamento marcado con un pin rojo" class="w-full h-full object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/a466d5d8-9b7b-468f-522f-9609e3586321.jpg" width="600"/>
+         <iframe 
+        title="Mapa ilustrativo de Mar del Plata con la ubicación exacta del departamento marcado con un pin rojo" 
+        class="w-full h-full object-cover" 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.5760990932414!2d-57.563072684159594!3d-38.00547797964089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584cdf3e8479b17%3A0xca881862a3e3e6de!2sMar%20del%20Plata%2C%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses!2sus!4v1686679146011!5m2!1ses!2sus" 
+        width="600" 
+        height="320" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+    </iframe>
     </div>
    </div>
   </section>
@@ -358,7 +367,7 @@
        Por favor ingresa un mensaje.
       </p>
      </div>
-     <button class="w-full bg-blue-700 text-white font-semibold py-3 rounded-lg hover:bg-blue-800 transition" type="submit">
+     <button class="w-full bg-blue-700 text-white font-semibold py-3 rounded-lg hover:bg-blue-800 transition" type="submit" style="">
       Enviar
      </button>
      <p class="text-green-600 font-semibold mt-4 hidden text-center" id="formSuccess">
@@ -405,7 +414,7 @@
    </div>
   </footer>
   <!-- WhatsApp Floating Button -->
-  <a aria-label="Chat por WhatsApp" href="https://wa.me/5492234567890" id="whatsappButton" target="_blank" rel="noopener noreferrer" title="Chatear por WhatsApp">
+  <a aria-label="Chat por WhatsApp" href="https://wa.me/2235298074" id="whatsappButton" target="_blank" rel="noopener noreferrer" title="Chatear por WhatsApp">
    <i class="fab fa-whatsapp">
    </i>
   </a>
@@ -443,7 +452,7 @@
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('load', revealOnScroll);
 
-    // Contact form validation and submission simulation
+    // Contact form validation and submission with WhatsApp redirection
     const form = document.getElementById('contactForm');
     const nameInput = form.name;
     const emailInput = form.email;
@@ -483,7 +492,19 @@
       }
 
       if (valid) {
-        // Simulate sending message
+        // Prepare WhatsApp message
+        const phoneNumber = '2235298074'; // Replace with your WhatsApp number including country code without + or spaces
+        const name = encodeURIComponent(nameInput.value.trim());
+        const email = encodeURIComponent(emailInput.value.trim());
+        const message = encodeURIComponent(messageInput.value.trim());
+        const text = `Hola,%20mi%20nombre%20es%20${name}.%20Mi%20correo%20es%20${email}.%20Mensaje:%20${message}`;
+
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${text}`;
+
+        // Open WhatsApp chat in new tab
+        window.open(whatsappURL, '_blank');
+
+        // Show success message and reset form
         formSuccess.classList.remove('hidden');
         form.reset();
       }
