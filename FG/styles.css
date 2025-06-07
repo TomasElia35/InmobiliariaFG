@@ -1,0 +1,111 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9fafb;
+    color: #374151;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+  }
+  /* Animaciones reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Hamburger animación */
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #1e40af;
+    border-radius: 2px;
+  }
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  /* Hover imagen */
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  /* Scroll horizontal galería */
+  .gallery-scroll::-webkit-scrollbar {
+    height: 8px;
+  }
+  .gallery-scroll::-webkit-scrollbar-track {
+    background: #e0e7ff;
+    border-radius: 10px;
+  }
+  .gallery-scroll::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 10px;
+  }
+  /* WhatsApp botón */
+  #whatsappButton {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: #25d366;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 100;
+  }
+  #whatsappButton:hover {
+    background-color: #1ebe57;
+  }
+  #whatsappButton i {
+    color: white;
+    font-size: 28px;
+  }
+  /* Botón scroll top */
+  #scrollTopButton {
+    position: fixed;
+    bottom: 90px;
+    right: 24px;
+    background-color: #1e40af;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+  }
+  #scrollTopButton:hover {
+    background-color: #374151;
+  }
+  #scrollTopButton i {
+    color: white;
+    font-size: 22px;
+  }
+  #scrollTopButton.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
