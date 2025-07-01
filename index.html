@@ -1,300 +1,502 @@
+
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>FG en Mar del Plata - Alquiler </title>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alquiler Departamento - Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="relative">
 
-  <!-- TailwindCSS & Fuentes -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body class="antialiased">
-
-        <!-- Navbar -->
-        <nav class="fixed w-full bg-white shadow-md z-50">
-         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a class="text-2xl font-playfair text-blue-900 font-semibold tracking-wide" href="#inicio">
-           FG Departamentos
-          </a>
-          <div class="hidden md:flex space-x-8 text-blue-900 font-semibold text-lg">
-           <a class="hover:text-blue-700 transition" href="#inicio">
-            Inicio
-           </a>
-           <a class="hover:text-blue-700 transition" href="#galeria">
-            Galería
-           </a>
-           <a class="hover:text-blue-700 transition" href="#servicios">
-            Servicios
-           </a>
-           <a class="hover:text-blue-700 transition" href="#ubicacion">
-            Ubicación
-           </a>
-           <a class="hover:text-blue-700 transition" href="#contacto">
-            Contacto
-           </a>
-          </div>
-          <button aria-label="Abrir menú" class="md:hidden hamburger focus:outline-none" id="hamburger">
-           <span>
-           </span>
-           <span>
-           </span>
-           <span>
-           </span>
-          </button>
-         </div>
-         <div class="md:hidden bg-white shadow-md max-h-0 overflow-hidden transition-max-height duration-500 ease-in-out" id="mobileMenu">
-          <a class="block px-6 py-3 border-b border-gray-200 text-blue-900 font-semibold hover:bg-blue-50 transition" href="#inicio">
-           Inicio
-          </a>
-          <a class="block px-6 py-3 border-b border-gray-200 text-blue-900 font-semibold hover:bg-blue-50 transition" href="#galeria">
-           Galería
-          </a>
-          <a class="block px-6 py-3 border-b border-gray-200 text-blue-900 font-semibold hover:bg-blue-50 transition" href="#servicios">
-           Servicios
-          </a>
-          <a class="block px-6 py-3 border-b border-gray-200 text-blue-900 font-semibold hover:bg-blue-50 transition" href="#ubicacion">
-           Ubicación
-          </a>
-          <a class="block px-6 py-3 text-blue-900 font-semibold hover:bg-blue-50 transition" href="#contacto">
-           Contacto
-          </a>
-         </div>
-        </nav>
-        <!-- Hero / Inicio -->
-        <section class="pt-24 md:pt-32 bg-gradient-to-b from-blue-50 to-white min-h-screen flex flex-col justify-center items-center text-center px-6" id="inicio">
-         <h1 class="text-4xl md:text-6xl font-playfair font-bold text-blue-900 mb-6 reveal" style="transition-delay: 0.1s">
-          Departamento en Mar del Plata
-         </h1>
-         <p class="max-w-3xl text-lg md:text-xl text-blue-700 mb-8 reveal" style="transition-delay: 0.3s">
-          Alquiler de un moderno y elegante departamento,
-            ubicado en el corazón de Mar del Plata, Argentina.
-         </p>
-         <a class="inline-block bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-blue-800 transition reveal" href="#contacto" style="transition-delay: 0.5s">
-          Contáctanos
-         </a>
-         <div class="mt-12 w-full max-w-5xl rounded-lg overflow-hidden shadow-lg reveal" style="transition-delay: 0.7s">
-          <img alt="Vista panorámica del departamento moderno con balcón y vista al mar en Mar del Plata, cielo azul y mar calmo" class="w-full object-cover" height="600" src="./img/vista.jpg" width="1200"/>
-         </div>
-        </section>
-        <!-- Galería -->
-        <section class="max-w-7xl mx-auto px-6 py-16" id="galeria">
-         <h2 class="text-3xl font-playfair font-bold text-blue-900 mb-10 text-center reveal">
-          Galería de Imágenes
-         </h2>
-         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 reveal" style="transition-delay: 0.1s">
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 right-0 bg-[#111111] z-50 shadow-lg">
+   <nav class="max-w-7xl mx-auto flex items-center justify-between p-4 md:p-6">
+    <a aria-label="Ir al inicio" class="text-2xl font-bold text-[#b28b60] hover:text-[#a67c52] transition pulseGold" href="#inicio">
+     FG DEPARTAMENTOS
+    </a>
+    <button aria-expanded="false" aria-label="Abrir menú" class="hamburger md:hidden focus:outline-none" id="hamburger">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+    <ul class="hidden md:flex space-x-8 text-[#b28b60] font-semibold tracking-wide uppercase" id="nav-links">
+     <li>
+      <a class="hover:text-[#a67c52] transition" href="#inicio">
+       INICIO
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-[#a67c52] transition" href="#galeria">
+       GALERIA
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-[#a67c52] transition" href="#descripcion">
+       DESCRIPCION
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-[#a67c52] transition" href="#ubicacion">
+       UBICACION
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-[#a67c52] transition" href="#preguntas">
+       PREGUNTAS FRECUENTES
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-[#a67c52] transition" href="#calendario">
+       CALENDARIO
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-[#a67c52] transition" href="#contacto">
+       CONTACTO
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <ul class="md:hidden bg-[#111111] text-[#b28b60] font-semibold uppercase space-y-4 p-6 hidden" id="nav-mobile">
+    <li>
+     <a class="block hover:text-[#a67c52] transition" href="#inicio">
+      INICIO
+     </a>
+    </li>
+    <li>
+     <a class="block hover:text-[#a67c52] transition" href="#galeria">
+      GALERIA
+     </a>
+    </li>
+    <li>
+     <a class="block hover:text-[#a67c52] transition" href="#descripcion">
+      DESCRIPCION
+     </a>
+    </li>
+    <li>
+     <a class="block hover:text-[#a67c52] transition" href="#ubicacion">
+      UBICACION
+     </a>
+    </li>
+    <li>
+     <a class="block hover:text-[#a67c52] transition" href="#preguntas">
+      PREGUNTAS FRECUENTES
+     </a>
+    </li>
+    <li>
+     <a class="block hover:text-[#a67c52] transition" href="#calendario">
+      CALENDARIO
+     </a>
+    </li>
+    <li>
+     <a class="block hover:text-[#a67c52] transition" href="#contacto">
+      CONTACTO
+     </a>
+    </li>
+   </ul>
+  </header>
+  <main class="pt-20">
+   <!-- INICIO -->
+   <section class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-20 gap-10 bg-[#111111] scroll-mt-20" id="inicio">
+    <div class="md:w-1/2 fadeInUp">
+     <h1 class="text-5xl md:text-6xl font-extrabold text-[#b28b60] mb-6 leading-tight pulseGold">
+      Tu departamento ideal en Cabo Corrientes
+     </h1>
+     <p class="text-lg md:text-xl text-gray-300 mb-8">
+      Disfruta de la comodidad, estilo y ubicación perfecta para tus vacaciones o escapadas.
+     </p>
+     <a class="inline-block bg-[#b28b60] hover:bg-[#a67c52] text-[#111111] font-bold py-3 px-8 rounded shadow-lg transition transform hover:scale-105" href="#contacto">
+      Reserva Ahora
+     </a>
+    </div>
+    <div class="md:w-1/2 flex justify-center fadeInUp" style="animation-delay: 0.3s;">
+     <img alt="Departamento moderno con vista panorámica al mar y decoración elegante en tonos dorados y negros" class="rounded-lg shadow-lg object-cover max-w-full h-auto" height="400" src="./img/vista.jpg" width="600"/>
+    </div>
+   </section>
+   <!-- GALERIA -->
+   <section class="min-h-screen bg-[#1a1a1a] px-6 md:px-20 py-16 scroll-mt-20" id="galeria">
+    <h2 class="text-4xl font-bold text-[#b28b60] mb-12 text-center pulseGold">
+     Galería
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12 fadeInUp">
           <img alt="Sala de estar moderna con sofá azul, ventanales grandes con vista al mar y decoración elegante" class="rounded-lg shadow-md hover-scale cursor-pointer" height="400" src="./img/IMG_3991.jpg" width="600"/>
           <img alt="Cocina integrada con isla central blanca, electrodomésticos modernos y decoración minimalista" class="rounded-lg shadow-md hover-scale cursor-pointer" height="400" src="./img/IMG_3990.jpg" width="600"/>
           <img alt="Dormitorio principal con cama king size, balcón con vista al mar y decoración elegante en tonos azules y blancos" class="rounded-lg shadow-md hover-scale cursor-pointer" height="400" src="./img/IMG_3992.jpg" width="600"/>
           <img alt="Baño moderno con acabados en azul y blanco, ducha de vidrio y accesorios elegantes" class="rounded-lg shadow-md hover-scale cursor-pointer" height="400" src="./img/IMG_3993.jpg" width="600"/>
           <img alt="Vista nocturna del departamento con luces encendidas y mar de fondo, cielo estrellado" class="rounded-lg shadow-md hover-scale cursor-pointer" height="400" src="./img/IMG_3994.jpg" width="600"/>
-          <img alt="Playa de Mar del Plata con arena dorada, olas suaves y cielo azul claro" class="rounded-lg shadow-md hover-scale cursor-pointer" height="400" src="./img/IMG_3996.jpg" width="600"/>
           <img alt="Playa de Mar del Plata con arena dorada, olas suaves y cielo azul claro" class="rounded-lg shadow-md hover-scale cursor-pointer" height="400" src="./img/IMG_3997.jpg" width="600"/>
-          <img alt="Playa de Mar del Plata con arena dorada, olas suaves y cielo azul claro" class="rounded-lg shadow-md hover-scale cursor-pointer" height="400" src="./img/IMG_3998.jpg" width="600"/>
-         </div>
-        </section>
-        <!-- Servicios / Comodidades -->
-        <section class="bg-blue-50 py-16 px-6" id="servicios">
-         <div class="max-w-7xl mx-auto">
-          <h2 class="text-3xl font-playfair font-bold text-blue-900 mb-12 text-center reveal">
-           Servicios y Comodidades
-          </h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center reveal" style="transition-delay: 0.1s">
-           <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition cursor-default">
-            <i class="fas fa-wifi text-4xl text-blue-700 mb-4">
-            </i>
-            <h3 class="font-semibold text-xl mb-2">
-             Wi-Fi de alta velocidad
-            </h3>
-            <p class="text-gray-600">
-             Conexión estable para trabajar o disfrutar.
-            </p>
-           </div>
-           <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition cursor-default">
-            <i class="fas fa-shield-alt text-4xl text-blue-700 mb-4">
-            </i>
-            <h3 class="font-semibold text-xl mb-2">
-             Seguridad 24/7
-            </h3>
-            <p class="text-gray-600">
-             Sistema de vigilancia y portería.
-            </p>
-           </div>
-           <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition cursor-default">
-            <i class="fas fa-couch text-4xl text-blue-700 mb-4">
-            </i>
-            <h3 class="font-semibold text-xl mb-2">
-             Amoblado
-            </h3>
-            <p class="text-gray-600">
-             Muebles modernos y confortables.
-            </p>
-           </div>
-           <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition cursor-default">
-            <i class="fas fa-sun text-4xl text-blue-700 mb-4">
-            </i>
-            <h3 class="font-semibold text-xl mb-2">
-             Balcón con sol
-            </h3>
-            <p class="text-gray-600">
-             Espacio para disfrutar el sol y la vista.
-            </p>
-           </div>
-          </div>
-         </div>
-        </section>
-        <!-- Ubicación -->
-        <section class="max-w-7xl mx-auto px-6 py-16" id="ubicacion">
-         <h2 class="text-3xl font-playfair font-bold text-blue-900 mb-10 text-center reveal">
-          Ubicación
-         </h2>
-         <div class="flex flex-col md:flex-row md:space-x-10 items-center reveal" style="transition-delay: 0.1s">
-          <div class="md:w-1/2 mb-8 md:mb-0">
-           <p class="text-gray-700 text-lg mb-6">
-            El departamento está ubicado en el barrio Cabo Corrientes de Mar del Plata, a pocos metros de la playa, restaurantes, y centros comerciales. Disfruta de la comodidad de hospedarte cerca de todo.
-           </p>
-           <ul class="list-disc list-inside text-gray-700 space-y-2">
-            <li>
-             A solo 5 cuadras de Playa Varese
-            </li>
-            <li>
-             Ubicado en el corazón del paseo comercial Güemes
-            </li>
-            <li>
-             Acceso a transporte público en la esquina
-            </li>
-            <li>
-             Barrio seguro, ideal para familias y turistas
-            </li>
-           </ul>
-          </div>
-          <div class="md:w-1/2 rounded-lg overflow-hidden shadow-lg w-full h-64 md:h-80">
-               <iframe 
-              title="Mapa ilustrativo de Mar del Plata con la ubicación exacta del departamento marcado con un pin rojo" 
-              class="w-full h-full object-cover" 
-              src= "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12573.145102763907!2d-57.536743327074596!3d-38.01710505080232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dc4bdfcf700d%3A0xe1ad0ca705f4665b!2sAv.%20Patricio%20Peralta%20Ramos%204283%2C%20B7600JWD%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1749332676980!5m2!1ses!2sar"
-              width="600" 
-              height="320" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy">
-          </iframe>
-          </div>
-         </div>
-        </section>
-        <!-- Contacto -->
-        <section class="bg-blue-50 py-16 px-6" id="contacto">
-         <div class="max-w-3xl mx-auto">
-          <h2 class="text-3xl font-playfair font-bold text-blue-900 mb-10 text-center reveal">
-           Contáctanos
-          </h2>
-          <form class="bg-white rounded-lg shadow-lg p-8 space-y-6 reveal" id="contactForm" novalidate="" style="transition-delay: 0.1s">
-           <div>
-            <label class="block text-gray-700 font-semibold mb-2" for="name">
-             Nombre completo
-            </label>
-            <input class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" id="name" name="name" placeholder="Tu nombre" required="" type="text"/>
-            <p class="text-red-600 text-sm mt-1 hidden" id="nameError">
-             Por favor ingresa tu nombre.
-            </p>
-           </div>
-           <div>
-            <label class="block text-gray-700 font-semibold mb-2" for="email">
-             Correo electrónico
-            </label>
-            <input class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" id="email" name="email" placeholder="tu@email.com" required="" type="email"/>
-            <p class="text-red-600 text-sm mt-1 hidden" id="emailError">
-             Por favor ingresa un correo válido.
-            </p>
-           </div>
-           <div>
-            <label class="block text-gray-700 font-semibold mb-2" for="message">
-             Mensaje
-            </label>
-            <textarea class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" id="message" name="message" placeholder="Escribe tu consulta aquí" required="" rows="4"></textarea>
-            <p class="text-red-600 text-sm mt-1 hidden" id="messageError">
-             Por favor ingresa un mensaje.
-            </p>
-           </div>
-           <button class="w-full bg-blue-700 text-white font-semibold py-3 rounded-lg hover:bg-blue-800 transition" type="submit" style="">
-            Enviar
-           </button>
-           <p class="text-green-600 font-semibold mt-4 hidden text-center" id="formSuccess">
-            ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.
-           </p>
-          </form>
-         </div>
-        </section>
-        <footer class="bg-white border-t border-gray-200 py-10 mt-0">
+    </div>	
+   </section>
+   <!-- DESCRIPCION -->
+   <section class="min-h-screen bg-[#111111] px-6 md:px-20 py-16 scroll-mt-20" id="descripcion">
+    <h2 class="text-4xl font-bold text-[#b28b60] mb-12 text-center pulseGold">
+     Descripción
+    </h2>
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 fadeInUp">
+     <div>
+      <p class="mb-6 text-gray-300 text-lg leading-relaxed">
+       Nuestro departamento en Cabo Corrientes ofrece un ambiente moderno y acogedor, ideal para hasta 4 personas. Cuenta con dos dormitorios, un baño completo, cocina equipada y una terraza con vista al mar. Su estilo combina elegancia con comodidad, utilizando tonos dorados y negros que crean una atmósfera cálida y sofisticada.
+      </p>
+      <h3 class="text-2xl font-semibold text-[#b28b60] mb-4">
+       Comodidades
+      </h3>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+       <li>
+        <i class="fas fa-wifi mr-2 text-[#b28b60]">
+        </i>
+        WiFi de alta velocidad
+       </li>
+       <li>
+        <i class="fas fa-tv mr-2 text-[#b28b60]">
+        </i>
+        Smart TV con Netflix y cable
+       </li>
+       <li>
+        <i class="fas fa-utensils mr-2 text-[#b28b60]">
+        </i>
+        Cocina totalmente equipada
+       </li>
+       <li>
+        <i class="fas fa-car mr-2 text-[#b28b60]">
+        </i>
+        Estacionamiento privado
+       </li>
+       <li>
+        <i class="fas fa-snowflake mr-2 text-[#b28b60]">
+        </i>
+        Aire acondicionado y calefacción
+       </li>
+       <li>
+        <i class="fas fa-swimmer mr-2 text-[#b28b60]">
+        </i>
+        Acceso a piscina comunitaria
+       </li>
+      </ul>
+     </div>
+     <div>
+      <div class="mb-6">
+		<img alt="Playa de Mar del Plata con arena dorada, olas suaves y cielo azul claro" class="rounded-lg shadow-md hover-scale cursor-pointer" height="400" src="./img/IMG_3998.jpg" width="600"/>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- UBICACION -->
+   <section class="min-h-screen bg-[#1a1a1a] px-6 md:px-20 py-16 scroll-mt-20" id="ubicacion">
+    <h2 class="text-4xl font-bold text-[#b28b60] mb-12 text-center pulseGold">
+     Ubicación
+    </h2>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 fadeInUp">
+     <div>
+      <iframe allowfullscreen="" height="350" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12573.145102763907!2d-57.536743327074596!3d-38.01710505080232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dc4bdfcf700d%3A0xe1ad0ca705f4665b!2sAv.%20Patricio%20Peralta%20Ramos%204283%2C%20B7600JWD%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1749332676980!5m2!1ses!2sar" style="border:0;" title="Mapa interactivo de Cabo Corrientes" width="100%">
+      </iframe>
+     </div>
+     <div class="text-gray-300 text-lg space-y-6">
+      <p>
+       El departamento está ubicado en el corazón de Cabo Corrientes, a solo 5 minutos caminando de la playa y rodeado de comercios, restaurantes y atracciones turísticas. La zona es tranquila y segura, ideal para relajarse y disfrutar del mar.
+      </p>
+      <ul class="list-disc list-inside space-y-2">
+       <li>
+        <strong>
+         Terminal de autobuses:
+        </strong>
+        15 minutos en auto
+       </li>
+       <li>
+        <strong>
+         Centro de la ciudad:
+        </strong>
+        10 minutos en auto
+       </li>
+       <li>
+        <strong>
+         Playa principal:
+        </strong>
+        5 minutos caminando
+       </li>
+       <li>
+        <strong>
+         Restaurantes y bares:
+        </strong>
+        A menos de 3 minutos a pie
+       </li>
+      </ul>
+     </div>
+    </div>
+   </section>
+   <!-- PREGUNTAS FRECUENTES -->
+   <section class="min-h-screen bg-[#111111] px-6 md:px-20 py-16 scroll-mt-20" id="preguntas">
+    <h2 class="text-4xl font-bold text-[#b28b60] mb-12 text-center pulseGold">
+     Preguntas Frecuentes
+    </h2>
+    <div class="max-w-4xl mx-auto space-y-6 fadeInUp">
+     <div class="faq-item">
+      <div aria-controls="faq1" aria-expanded="false" class="faq-question flex justify-between items-center" role="button" tabindex="0">
+       <span>
+        ¿Cuál es el horario de check-in y check-out?
+       </span>
+       <i class="fas fa-chevron-down">
+       </i>
+      </div>
+      <div aria-hidden="true" class="faq-answer" id="faq1">
+       <p>
+        El check-in es a partir de las 15:00 y el check-out hasta las 11:00.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item">
+      <div aria-controls="faq2" aria-expanded="false" class="faq-question flex justify-between items-center" role="button" tabindex="0">
+       <span>
+        ¿Se permiten mascotas?
+       </span>
+       <i class="fas fa-chevron-down">
+       </i>
+      </div>
+      <div aria-hidden="true" class="faq-answer" id="faq2">
+       <p>
+        No se permiten mascotas para garantizar la comodidad de todos los huéspedes.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item">
+      <div aria-controls="faq3" aria-expanded="false" class="faq-question flex justify-between items-center" role="button" tabindex="0">
+       <span>
+        ¿Hay estacionamiento disponible?
+       </span>
+       <i class="fas fa-chevron-down">
+       </i>
+      </div>
+      <div aria-hidden="true" class="faq-answer" id="faq3">
+       <p>
+        Sí, contamos con estacionamiento privado para un vehículo.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item">
+      <div aria-controls="faq4" aria-expanded="false" class="faq-question flex justify-between items-center" role="button" tabindex="0">
+       <span>
+        ¿El departamento tiene WiFi?
+       </span>
+       <i class="fas fa-chevron-down">
+       </i>
+      </div>
+      <div aria-hidden="true" class="faq-answer" id="faq4">
+       <p>
+        Sí, ofrecemos WiFi de alta velocidad gratuito durante toda la estadía.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item">
+      <div aria-controls="faq5" aria-expanded="false" class="faq-question flex justify-between items-center" role="button" tabindex="0">
+       <span>
+        ¿Cuál es la política de cancelación?
+       </span>
+       <i class="fas fa-chevron-down">
+       </i>
+      </div>
+      <div aria-hidden="true" class="faq-answer" id="faq5">
+       <p>
+        La cancelación es gratuita hasta 7 días antes de la fecha de ingreso. Después de ese plazo, se retiene el 50% del monto total.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- CALENDARIO -->
+   <section class="min-h-screen bg-[#1a1a1a] px-6 md:px-20 py-16 scroll-mt-20" id="calendario">
+    <h2 class="text-4xl font-bold text-[#b28b60] mb-12 text-center pulseGold">
+     Calendario y Políticas
+    </h2>
+    <div class="max-w-4xl mx-auto fadeInUp">
+     <div class="bg-[#111111] rounded-lg p-6 shadow-lg text-gray-300" id="calendar">
+     </div>
+     <div class="mt-10 text-gray-300 space-y-4">
+      <h3 class="text-2xl font-semibold text-[#b28b60] mb-4">
+       Políticas del alquiler
+      </h3>
+      <ul class="list-disc list-inside space-y-2">
+       <li>
+        Check-in: 15:00 - Check-out: 11:00
+       </li>
+       <li>
+        Se permite fumar solo en la terraza.
+       </li>
+       <li>
+        No se permiten fiestas ni eventos.
+       </li>
+       <li>
+        Se requiere depósito de garantía reembolsable.
+       </li>
+       <li>
+        Cancelación gratuita hasta 7 días antes de la llegada.
+       </li>
+      </ul>
+     </div>
+    </div>
+   </section>
+   <!-- CONTACTO -->
+   <section class="min-h-screen bg-[#111111] px-6 md:px-20 py-16 scroll-mt-20" id="contacto">
+    <h2 class="text-4xl font-bold text-[#b28b60] mb-12 text-center pulseGold">
+     Contacto
+    </h2>
+    <div class="max-w-3xl mx-auto fadeInUp">
+     <form class="space-y-6" id="contactForm" novalidate="">
+      <div>
+       <label class="block mb-2 font-semibold text-gray-300" for="nombre">
+        Nombre
+       </label>
+       <input class="w-full p-3 rounded bg-[#222222] border border-gray-700 text-gray-200" id="nombre" name="nombre" placeholder="Tu nombre" required="" type="text"/>
+      </div>
+      <div>
+       <label class="block mb-2 font-semibold text-gray-300" for="email">
+        Correo electrónico
+       </label>
+       <input class="w-full p-3 rounded bg-[#222222] border border-gray-700 text-gray-200" id="email" name="email" placeholder="tu@email.com" required="" type="email"/>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+       <div>
+        <label class="block mb-2 font-semibold text-gray-300" for="fechaIngreso">
+         Fecha de ingreso
+        </label>
+        <input class="w-full p-3 rounded bg-[#222222] border border-gray-700 text-gray-200" id="fechaIngreso" name="fechaIngreso" required="" type="date"/>
+       </div>
+       <div>
+        <label class="block mb-2 font-semibold text-gray-300" for="fechaSalida">
+         Fecha de salida
+        </label>
+        <input class="w-full p-3 rounded bg-[#222222] border border-gray-700 text-gray-200" id="fechaSalida" name="fechaSalida" required="" type="date"/>
+       </div>
+      </div>
+      <div>
+       <label class="block mb-2 font-semibold text-gray-300" for="mensaje">
+        Mensaje
+       </label>
+       <textarea class="w-full p-3 rounded bg-[#222222] border border-gray-700 text-gray-200" id="mensaje" name="mensaje" placeholder="Escribe tu consulta aquí..." rows="4"></textarea>
+      </div>
+      <button class="bg-[#b28b60] hover:bg-[#a67c52] text-[#111111] font-bold py-3 px-8 rounded shadow-lg transition transform hover:scale-105" type="submit">
+       Enviar
+      </button>
+     </form>
+     <div class="mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-gray-300">
+      <a class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe57] text-white font-semibold py-3 px-6 rounded shadow-lg transition" href="https://wa.me/5491123456789?text=Hola%2C+estoy+interesado+en+alquilar+el+departamento." rel="noopener" target="_blank">
+       <i class="fab fa-whatsapp fa-lg">
+       </i>
+       WhatsApp
+      </a>
+      <div>
+       <p>
+        <i class="fas fa-envelope mr-2">
+        </i>
+        contacto@departamentocabocorrientes.com
+       </p>
+       <p>
+        <i class="fas fa-phone mr-2">
+        </i>
+        +54 9 11 2345 6789
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <!-- Right side fixed buttons -->
+  <div aria-label="Botones de navegación rápida" id="side-buttons">
+   <button aria-label="Ir a inicio" class="focus:outline-none" id="btnInicio" title="Ir a inicio" type="button">
+    <i class="fas fa-home">
+    </i>
+    Inicio
+   </button>
+   <a aria-label="Contactar por WhatsApp" class="focus:outline-none" href="https://wa.me/+5492235924637?text=Hola%2C+estoy+interesado+en+alquilar+el+departamento." rel="noopener" target="_blank" title="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp">
+    </i>
+    WhatsApp
+   </a>
+  </div>
+  <!-- Footer -->
+  <footer class="bg-[#111111] text-gray-300 py-10 mt-20 border-t border-gray-800">
+   <div class="max-w-7xl mx-auto px-6 md:px-20 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div>
+     <h3 class="text-[#b28b60] font-bold text-xl mb-4">
+      Contacto
+     </h3>
+     <p>
+      Av. Patricio Peralta Ramos 4283, Mar del Plata, Argentina
+     </p>
+     <p class="mt-2">
+      <i class="fas fa-phone mr-2">
+      </i>
+      +549 223592-4637
+     </p>
+     <p>
+      <i class="fas fa-envelope mr-2">
+      </i>
+      fgdepartamento@gmail.com
+     </p>
+    </div>
+    <div>
+     <h3 class="text-[#b28b60] font-bold text-xl mb-4">
+      Enlaces Rápidos
+     </h3>
+     <ul class="space-y-2">
+      <li>
+       <a class="hover:text-[#a67c52] transition" href="#inicio">
+        Inicio
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-[#a67c52] transition" href="#galeria">
+        Galería
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-[#a67c52] transition" href="#contacto">
+        Contacto
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h3 class="text-[#b28b60] font-bold text-xl mb-4">
+      Redes Sociales
+     </h3>
+     <div class="flex space-x-6 text-[#b28b60]">
+      <a aria-label="Facebook" class="hover:text-[#a67c52] transition" href="https://www.instagram.com/fg_departamentos/" rel="noopener" target="_blank">
+       <i class="fab fa-facebook fa-2x">
+       </i>
+      </a>
+      <a aria-label="Instagram" class="hover:text-[#a67c52] transition" href="https://www.instagram.com/fg_departamentos/" rel="noopener" target="_blank">
+       <i class="fab fa-instagram fa-2x">
+       </i>
+      </a>
+      <a aria-label="Twitter" class="hover:text-[#a67c52] transition" href="https://www.instagram.com/fg_departamentos/" rel="noopener" target="_blank">
+       <i class="fab fa-twitter fa-2x">
+       </i>
+      </a>
+     </div>
+    </div>
+    <div>
+     <h3 class="text-[#b28b60] font-bold text-xl mb-4">
+      Métodos de Pago
+     </h3>
+     <div class="flex flex-wrap gap-4">
+	 <img alt="Logo de Efectivo, método de pago aceptado" class="h-12 object-contain" height="50" src="./img/cash.png" width="80"/>
+      <img alt="Logo de Mercado Pago, método de pago aceptado" class="h-12 object-contain" height="50" src="./img/mp.png" width="80"/>
+     </div>
+    </div>
+   </div>
+   <div class="mt-10 text-center text-gray-500 text-sm select-none">
+    © 2024 Departamento Cabo Corrientes. Todos los derechos reservados.
+   </div>
+  </footer>
+  
+</html>
 
-         <div class="max-w-7xl mx-auto px-6">
-          <div class="flex flex-col md:flex-row md:justify-between md:items-center space-y-8 md:space-y-0">
-           <div class="text-center md:text-left text-gray-500 text-sm">
-            © 2024 Mar del Plata Home. Todos los derechos reservados.
-           </div>
-           <div class="flex flex-col md:flex-row md:items-center md:space-x-12 space-y-6 md:space-y-0">
-            <!-- Redes Sociales -->
-            <div class="flex space-x-6 justify-center md:justify-start">
-             <a aria-label="Facebook" class="text-blue-700 hover:text-blue-900 transition text-2xl" href="https://www.facebook.com" rel="noopener noreferrer" target="_blank">
-              <i class="fab fa-facebook-f">
-              </i>
-             </a>
-             <a aria-label="Instagram" class="text-pink-600 hover:text-pink-800 transition text-2xl" href="https://www.instagram.com" rel="noopener noreferrer" target="_blank">
-              <i class="fab fa-instagram">
-              </i>
-             </a>
-             <a aria-label="Twitter" class="text-blue-400 hover:text-blue-600 transition text-2xl" href="https://www.twitter.com" rel="noopener noreferrer" target="_blank">
-              <i class="fab fa-twitter">
-              </i>
-             </a>
-             <a aria-label="LinkedIn" class="text-blue-700 hover:text-blue-900 transition text-2xl" href="https://www.linkedin.com" rel="noopener noreferrer" target="_blank">
-              <i class="fab fa-linkedin-in">
-              </i>
-             </a>
-            </div>
-            <!-- Métodos de Pago -->
-<div class="flex space-x-6 justify-center md:justify-start items-center h-10">
-  <!-- Mercado Pago -->
-  <img 
-    src="./img/mp.png" 
-    alt="Logo Mercado Pago" 
-    class="h-full w-auto object-contain max-w-[64px]"
-  />
-
-  <!-- Mastercard -->
-  <img 
-    src="./img/credito.png" 
-    alt="Logo Mastercard" 
-    class="h-full w-auto object-contain max-w-[64px]"
-  />
-
-  <!-- Visa -->
-  <img 
-    src="./img/debito.png" 
-    alt="Logo Visa" 
-    class="h-full w-auto object-contain max-w-[64px]"
-  />
-</div>
-
-           </div>
-          </div>
-         </div>
-        </footer>
-  <!-- Botón WhatsApp -->
-  <a href="https://wa.me/2235298074" id="whatsappButton" target="_blank" rel="noopener noreferrer" aria-label="Chat por WhatsApp" title="Chatear por WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <!-- Botón Subir -->
-  <button id="scrollTopButton" aria-label="Subir al inicio" title="Subir al inicio" type="button">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- Lógica JS -->
-  <script src="main.js"></script>
-</body>
+    <script src="js/script.js"></script>
+  </body>
 </html>
