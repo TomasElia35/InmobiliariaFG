@@ -1,111 +1,140 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f9fafb;
-    color: #374151;
+    font-family: 'Poppins', sans-serif;
+    background-color: #111111;
+    color: #f0f0f0;
   }
-  h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
   }
-  /* Animaciones reveal */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+  ::-webkit-scrollbar-track {
+    background: #1a1a1a;
   }
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+  ::-webkit-scrollbar-thumb {
+    background-color: #b28b60;
+    border-radius: 10px;
   }
-  /* Hamburger animación */
+  /* Animations */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .fadeInUp {
+    animation: fadeInUp 1s ease forwards;
+  }
+  @keyframes pulseGold {
+    0%, 100% {
+      color: #b28b60;
+      text-shadow: 0 0 5px #b28b60;
+    }
+    50% {
+      color: #a67c52;
+      text-shadow: 0 0 15px #a67c52;
+    }
+  }
+  .pulseGold {
+    animation: pulseGold 3s infinite;
+  }
+  /* Hamburger menu animation */
   .hamburger span {
     display: block;
     width: 25px;
     height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-    background-color: #1e40af;
+    margin-bottom: 5px;
+    background-color: #b28b60;
     border-radius: 2px;
+    transition: all 0.3s ease-in-out;
   }
   .hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+    transform: rotate(45deg) translate(5px, 5px);
   }
   .hamburger.active span:nth-child(2) {
     opacity: 0;
   }
   .hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: rotate(-45deg) translate(5px, -5px);
   }
-  /* Hover imagen */
-  .hover-scale {
-    transition: transform 0.3s ease;
-  }
-  .hover-scale:hover {
-    transform: scale(1.05);
-  }
-  /* Scroll horizontal galería */
-  .gallery-scroll::-webkit-scrollbar {
-    height: 8px;
-  }
-  .gallery-scroll::-webkit-scrollbar-track {
-    background: #e0e7ff;
-    border-radius: 10px;
-  }
-  .gallery-scroll::-webkit-scrollbar-thumb {
-    background: #3b82f6;
-    border-radius: 10px;
-  }
-  /* WhatsApp botón */
-  #whatsappButton {
+  /* Right side fixed buttons */
+  #side-buttons {
     position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background-color: #25d366;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1000;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #side-buttons button, #side-buttons a {
+    background-color: #b28b60;
+    color: #111111;
+    padding: 0.6rem 0.8rem;
+    border-radius: 0 5px 5px 0;
+    font-weight: 600;
+    box-shadow: 0 0 8px #b28b60;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
     align-items: center;
+    gap: 0.5rem;
+  }
+  #side-buttons button:hover, #side-buttons a:hover {
+    background-color: #a67c52;
+    box-shadow: 0 0 15px #a67c52;
+  }
+  /* Carousel arrows */
+  .carousel-arrow {
+    background-color: rgba(178, 139, 96, 0.8);
+    color: #111111;
+    padding: 0.3rem 0.5rem;
+    border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    z-index: 100;
   }
-  #whatsappButton:hover {
-    background-color: #1ebe57;
+  .carousel-arrow:hover {
+    background-color: #a67c52;
   }
-  #whatsappButton i {
-    color: white;
-    font-size: 28px;
-  }
-  /* Botón scroll top */
-  #scrollTopButton {
-    position: fixed;
-    bottom: 90px;
-    right: 24px;
-    background-color: #1e40af;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /* Accordion FAQ */
+  .faq-question {
     cursor: pointer;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 100;
+    background-color: #222222;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    border: 1px solid #444444;
+    transition: background-color 0.3s ease;
   }
-  #scrollTopButton:hover {
-    background-color: #374151;
+  .faq-question:hover {
+    background-color: #333333;
   }
-  #scrollTopButton i {
-    color: white;
-    font-size: 22px;
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background-color: #1a1a1a;
+    padding: 0 1rem;
+    border-left: 3px solid #b28b60;
   }
-  #scrollTopButton.show {
-    opacity: 1;
-    visibility: visible;
+  .faq-answer.open {
+    padding: 1rem;
+    max-height: 500px;
   }
-  
+  /* Input focus */
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #b28b60;
+    box-shadow: 0 0 8px #b28b60;
+  }
+  /* Scroll snap for sections */
+  main {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+  section {
+    scroll-snap-align: start;
+  }
