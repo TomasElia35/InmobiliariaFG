@@ -130,11 +130,6 @@ body {
     box-shadow: 0 0 8px #b28b60;
   }
   /* Scroll snap for sections */
-  main {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
-  }
-  section {
-    scroll-snap-align: start;
-  }
+main {
+  scroll-behavior: smooth; /* opcional, si querés scroll suave */
+}
