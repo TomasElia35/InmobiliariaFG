@@ -71,18 +71,27 @@ body {
     flex-direction: column;
     gap: 1rem;
   }
-  #side-buttons button, #side-buttons a {
-    background-color: #b28b60;
-    color: #111111;
-    padding: 0.6rem 0.8rem;
-    border-radius: 0 5px 5px 0;
-    font-weight: 600;
-    box-shadow: 0 0 8px #b28b60;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
+#side-buttons button,
+#side-buttons a {
+  background-color: #b28b60;
+  color: #111111;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 18px;
+  box-shadow: 0 0 6px #b28b60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+#side-buttons button:hover,
+#side-buttons a:hover {
+  background-color: #a67c52;
+  box-shadow: 0 0 12px #a67c52;
+}
+
+
   #side-buttons button:hover, #side-buttons a:hover {
     background-color: #a67c52;
     box-shadow: 0 0 15px #a67c52;
