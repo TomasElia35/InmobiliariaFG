@@ -389,15 +389,15 @@ textarea {
 /* ───────── Formulario ───────── */
 .form-fechas {
   display: grid;
-  grid-template-columns: 1fr 1fr 96px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 96px;
   gap: var(--s4) var(--s3);
 }
 .form-fechas.es-completo {
-  grid-template-columns: 1fr 1fr 110px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 110px;
   gap: var(--s4);
 }
 .form-fechas.es-en-linea {
-  grid-template-columns: 1fr 1fr 150px minmax(260px, 1.1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 150px minmax(260px, 1.1fr);
   align-items: end;
   gap: var(--s3);
   background: #07090fcc;
@@ -468,6 +468,24 @@ textarea {
   left: 12px;
   bottom: 17px;
   pointer-events: none;
+}
+/* Fechas en celulares reales (sobre todo iPhone): sin apariencia nativa el campo respeta el ancho de su columna */
+.campo input[type='date'] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  height: 52px;
+  line-height: 1.2;
+  text-align: left;
+}
+.campo input[type='date']::-webkit-date-and-time-value {
+  margin: 0;
+  text-align: left;
+}
+.campo input[type='date']::-webkit-datetime-edit {
+  padding: 0;
 }
 .campo input[type='date']::-webkit-calendar-picker-indicator {
   width: 18px;
@@ -1293,7 +1311,7 @@ main > section + section,
   .vista-5, .vista-6 { grid-column: span 1; }
   .vista-5 img, .vista-6 img { aspect-ratio: 1; }
   .depto-listas { grid-template-columns: 1fr; }
-  .form-fechas.es-en-linea { grid-template-columns: 1fr 1fr 130px; }
+  .form-fechas.es-en-linea { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 130px; }
   .es-en-linea .boton-consultar { grid-column: 1 / -1; grid-row: 3; }
   .riel { display: none; }
 }
@@ -1340,8 +1358,8 @@ main > section + section,
   .inicio-bajada { font-size: 17px; margin-top: var(--s4); }
   .inicio-foto { width: 100%; }
   .inicio-foto img { aspect-ratio: 16 / 10; }
-  .horizonte { margin-top: 88px; }
-  .horizonte::before { height: 84px; }
+  .horizonte { margin-top: 64px; }
+  .horizonte::before { height: 60px; }
   .franja-consulta { padding-top: var(--s5); }
 
   .seccion { padding: var(--s8) var(--gutter) var(--s7); }
@@ -1361,16 +1379,18 @@ main > section + section,
   .vista-0 img { aspect-ratio: 1; height: auto; }
   .vista-0 button { height: auto; }
   .vista-pie { font-size: 13px; }
+  /* En celular cada campo va en su línea: ningún teléfono corta la fecha */
   .form-fechas,
   .form-fechas.es-completo,
-  .form-fechas.es-en-linea { grid-template-columns: 1fr 1fr; }
-  .form-fechas.es-en-linea { padding: var(--s4); }
-  .campo-personas { grid-column: 1 / -1; }
-  .es-en-linea .boton-consultar { grid-row: 4; }
-  .es-en-linea > div[aria-live] { grid-row: 3; }
+  .form-fechas.es-en-linea { grid-template-columns: minmax(0, 1fr); }
+  .form-fechas.es-en-linea { padding: var(--s4); gap: var(--s3); }
+  .es-en-linea .boton-consultar,
+  .es-en-linea > div[aria-live] { grid-column: 1; grid-row: auto; }
+  .nav-marca { font-size: 13px; letter-spacing: 0.16em; gap: var(--s2); }
+  .boton-consultar { padding: var(--s3) var(--s3); }
   .aviso-consulta-grande { padding: var(--s5) var(--s4); }
   /* En la tarjeta final cada fecha va en su línea, para que el día no quede tapado por el ícono */
-  .form-fechas.es-completo { grid-template-columns: 1fr; }
+  .form-fechas.es-completo { grid-template-columns: minmax(0, 1fr); }
   .visor-ant, .visor-sig { top: auto; bottom: 56px; }
   .preguntas summary { font-size: 18px; }
   .preguntas details p { padding-right: 0; }
