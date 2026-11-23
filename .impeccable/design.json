@@ -1,0 +1,500 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-23T00:31:11+00:00",
+  "title": "Design System: FG Departamentos",
+  "extensions": {
+    "colorMeta": {
+      "noche": {
+        "role": "neutral",
+        "displayName": "Last Night",
+        "canonical": "#07090f",
+        "tonalRamp": [
+          "#1e222f",
+          "#313954",
+          "#41507c",
+          "#4f65a6",
+          "#7485b9",
+          "#9da8c8",
+          "#c6ccdc",
+          "#f0f1f5"
+        ]
+      },
+      "noche-2": {
+        "role": "neutral",
+        "displayName": "Deep Night Blue",
+        "canonical": "#0e1636",
+        "tonalRamp": [
+          "#181e34",
+          "#26315f",
+          "#2f428e",
+          "#3450c1",
+          "#5f75ce",
+          "#8f9dd6",
+          "#c0c7e3",
+          "#eef0f6"
+        ]
+      },
+      "cobalto": {
+        "role": "primary",
+        "displayName": "Horizon Cobalt",
+        "canonical": "#1d3fa8",
+        "tonalRamp": [
+          "#181f34",
+          "#253360",
+          "#2e468f",
+          "#3356c2",
+          "#5e7acf",
+          "#8fa0d6",
+          "#bfc8e3",
+          "#eef0f6"
+        ]
+      },
+      "cobalto-osc": {
+        "role": "primary",
+        "displayName": "Deep Cobalt",
+        "canonical": "#16318a",
+        "tonalRamp": [
+          "#181f34",
+          "#253360",
+          "#2e448f",
+          "#3354c2",
+          "#5e78cf",
+          "#8f9fd6",
+          "#bfc8e3",
+          "#eef0f6"
+        ]
+      },
+      "violeta": {
+        "role": "neutral",
+        "displayName": "Dawn Violet",
+        "canonical": "#2e3aa0",
+        "tonalRamp": [
+          "#191c33",
+          "#272d5d",
+          "#323b8b",
+          "#3846bd",
+          "#626dcb",
+          "#9198d4",
+          "#c1c4e2",
+          "#efeff6"
+        ]
+      },
+      "rosa": {
+        "role": "secondary",
+        "displayName": "Dawn Pink",
+        "canonical": "#e88aa0",
+        "tonalRamp": [
+          "#34181f",
+          "#602533",
+          "#8f2e45",
+          "#c23354",
+          "#cf5e78",
+          "#d68f9f",
+          "#e3bfc8",
+          "#f6eef0"
+        ]
+      },
+      "rosa-claro": {
+        "role": "secondary",
+        "displayName": "Pale Pink",
+        "canonical": "#f6c3cf",
+        "tonalRamp": [
+          "#34181f",
+          "#602533",
+          "#8f2e45",
+          "#c23354",
+          "#cf5e79",
+          "#d68fa0",
+          "#e3bfc8",
+          "#f6eef0"
+        ]
+      },
+      "durazno": {
+        "role": "tertiary",
+        "displayName": "Peach Light",
+        "canonical": "#ffd9c2",
+        "tonalRamp": [
+          "#342318",
+          "#603b25",
+          "#8f522e",
+          "#c26933",
+          "#cf895e",
+          "#d6aa8f",
+          "#e3cdbf",
+          "#f6f1ee"
+        ]
+      },
+      "dia": {
+        "role": "neutral",
+        "displayName": "Full Day",
+        "canonical": "#fff7ee",
+        "tonalRamp": [
+          "#342718",
+          "#604425",
+          "#8f612e",
+          "#c27f33",
+          "#cf9a5e",
+          "#d6b58f",
+          "#e3d2bf",
+          "#f6f2ee"
+        ]
+      },
+      "blanco": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#424242",
+          "#5e5e5e",
+          "#7a7a7a",
+          "#969696",
+          "#b2b2b2",
+          "#d1d1d1",
+          "#f2f2f2"
+        ]
+      },
+      "luz": {
+        "role": "neutral",
+        "displayName": "Night Light",
+        "canonical": "#fff7ee",
+        "tonalRamp": [
+          "#342718",
+          "#604425",
+          "#8f612e",
+          "#c27f33",
+          "#cf9a5e",
+          "#d6b58f",
+          "#e3d2bf",
+          "#f6f2ee"
+        ]
+      },
+      "luz-suave": {
+        "role": "neutral",
+        "displayName": "Soft Night Light",
+        "canonical": "#c9d2f5",
+        "tonalRamp": [
+          "#181e34",
+          "#253160",
+          "#2e428f",
+          "#3350c2",
+          "#5e75cf",
+          "#8f9dd6",
+          "#bfc7e3",
+          "#eef0f6"
+        ]
+      },
+      "tinta": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#0b1020",
+        "tonalRamp": [
+          "#1b2032",
+          "#2a365a",
+          "#374a86",
+          "#405cb5",
+          "#687ec4",
+          "#95a3d0",
+          "#c3c9e0",
+          "#eff1f5"
+        ]
+      },
+      "tinta-suave": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#3d4460",
+        "tonalRamp": [
+          "#21232b",
+          "#373c4d",
+          "#4c5470",
+          "#606a95",
+          "#818aab",
+          "#a5abc0",
+          "#cacdd8",
+          "#f1f1f4"
+        ]
+      },
+      "tinta-rosa": {
+        "role": "neutral",
+        "displayName": "Pink Ink",
+        "canonical": "#4a1f2e",
+        "tonalRamp": [
+          "#301d23",
+          "#562e3c",
+          "#7f3d54",
+          "#ab496c",
+          "#bd708b",
+          "#cb9aab",
+          "#ddc5cd",
+          "#f5f0f1"
+        ]
+      },
+      "tinta-durazno": {
+        "role": "neutral",
+        "displayName": "Peach Ink",
+        "canonical": "#5a3524",
+        "tonalRamp": [
+          "#30231c",
+          "#573b2d",
+          "#81523c",
+          "#ae6747",
+          "#bf876e",
+          "#cca999",
+          "#deccc4",
+          "#f5f1ef"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only, sentence case, max 13ch."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles, sentence case, balanced wrap."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Question summaries, address and month names."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text with global tabular numerals; 16px under 900px."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase tracked field labels and list headings."
+      },
+      "numeral": {
+        "displayName": "Proximity Numeral",
+        "purpose": "Walking minutes; closer destinations render larger."
+      }
+    },
+    "shadows": [
+      {
+        "name": "hero-photo-lift",
+        "value": "0 30px 60px -20px #000000aa",
+        "purpose": "Hero photograph over the night."
+      },
+      {
+        "name": "map-lift",
+        "value": "0 20px 40px -24px #5a352466",
+        "purpose": "Embedded map on the peach ground."
+      },
+      {
+        "name": "card-lift",
+        "value": "0 20px 50px -30px #0b102040",
+        "purpose": "White consult card on day."
+      },
+      {
+        "name": "floating-button",
+        "value": "0 10px 24px -6px #0b102066",
+        "purpose": "Fixed WhatsApp button."
+      },
+      {
+        "name": "horizon-glow",
+        "value": "0 0 24px 6px #ffd9c2aa",
+        "purpose": "Bright 2px horizon highlight."
+      },
+      {
+        "name": "sun-glow",
+        "value": "0 0 0 4px #e88aa033, 0 0 18px 4px #e88aa066",
+        "purpose": "Sun disc on the rail."
+      },
+      {
+        "name": "focus-halo-day",
+        "value": "0 0 0 3px #1d3fa826",
+        "purpose": "Field focus on light grounds."
+      },
+      {
+        "name": "focus-halo-night",
+        "value": "0 0 0 3px #e88aa033",
+        "purpose": "Field focus on night."
+      }
+    ],
+    "motion": [
+      {
+        "name": "salida",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Shared exit easing for every entrance and state change."
+      },
+      {
+        "name": "amanecer",
+        "value": "2.8s salida 0.15s delay; from opacity 0, scaleY(0.4)",
+        "purpose": "Horizon light gathers once on load."
+      },
+      {
+        "name": "abrir",
+        "value": "0.35s salida; from opacity 0, translateY(12px) scale(0.98)",
+        "purpose": "Lightbox opening."
+      },
+      {
+        "name": "state",
+        "value": "0.2s",
+        "purpose": "Color and border transitions on hover."
+      },
+      {
+        "name": "photo-hover",
+        "value": "transform 0.7s salida, scale(1.04)",
+        "purpose": "Gallery thumbnails on hover."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation and transition durations 0.01ms",
+        "purpose": "Everything static under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "1180px"
+      },
+      {
+        "name": "stack",
+        "value": "900px"
+      },
+      {
+        "name": "phone",
+        "value": "600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (day)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Cobalt action on pink, peach or day grounds.",
+      "html": "<div class=\"ds-dia\"><button class=\"ds-btn\">Consultar por WhatsApp</button></div>",
+      "css": ":host{--noche:#07090f;--noche-2:#0e1636;--cobalto:#1d3fa8;--cobalto-osc:#16318a;--rosa:#e88aa0;--rosa-claro:#f6c3cf;--durazno:#ffd9c2;--dia:#fff7ee;--blanco:#fff;--luz:#fff7ee;--luz-suave:#c9d2f5;--tinta:#0b1020;--tinta-suave:#3d4460;--radio:4px;--salida:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums}.ds-dia{background:var(--dia);padding:24px}.ds-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 24px;border:0;border-radius:var(--radio);background:var(--cobalto);color:var(--blanco);font:700 16px Archivo,system-ui,sans-serif;cursor:pointer;transition:background-color .2s,transform .15s var(--salida)}.ds-btn:hover{background:var(--cobalto-osc)}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:2px solid var(--cobalto);outline-offset:3px}"
+    },
+    {
+      "name": "Night Button",
+      "kind": "button",
+      "refersTo": "button-night",
+      "description": "Pink action on night grounds (hero form).",
+      "html": "<div class=\"ds-noche\"><button class=\"ds-btn-n\">Consultar por WhatsApp</button></div>",
+      "css": ":host{--noche:#07090f;--noche-2:#0e1636;--cobalto:#1d3fa8;--cobalto-osc:#16318a;--rosa:#e88aa0;--rosa-claro:#f6c3cf;--durazno:#ffd9c2;--dia:#fff7ee;--blanco:#fff;--luz:#fff7ee;--luz-suave:#c9d2f5;--tinta:#0b1020;--tinta-suave:#3d4460;--radio:4px;--salida:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums}.ds-noche{background:var(--noche);padding:24px}.ds-btn-n{min-height:52px;padding:12px 24px;border:0;border-radius:var(--radio);background:var(--rosa);color:var(--noche);font:700 16px Archivo,system-ui,sans-serif;cursor:pointer;transition:background-color .2s,transform .15s var(--salida)}.ds-btn-n:hover{background:var(--rosa-claro)}.ds-btn-n:active{transform:translateY(1px)}.ds-btn-n:focus-visible{outline:2px solid var(--rosa);outline-offset:3px}"
+    },
+    {
+      "name": "Ghost Nav Button",
+      "kind": "button",
+      "refersTo": "nav",
+      "description": "Rosa outline call to action at the end of the night nav.",
+      "html": "<div class=\"ds-noche\"><a class=\"ds-ghost\" href=\"#\">Consultar</a></div>",
+      "css": ":host{--noche:#07090f;--noche-2:#0e1636;--cobalto:#1d3fa8;--cobalto-osc:#16318a;--rosa:#e88aa0;--rosa-claro:#f6c3cf;--durazno:#ffd9c2;--dia:#fff7ee;--blanco:#fff;--luz:#fff7ee;--luz-suave:#c9d2f5;--tinta:#0b1020;--tinta-suave:#3d4460;--radio:4px;--salida:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums}.ds-noche{background:var(--noche);padding:24px}.ds-ghost{display:inline-block;color:var(--luz);border:1px solid var(--rosa);border-radius:var(--radio);padding:8px 16px;font:600 13px Archivo,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:background-color .2s,color .2s}.ds-ghost:hover{background:var(--rosa);color:var(--noche)}.ds-ghost:focus-visible{outline:2px solid var(--rosa);outline-offset:3px}"
+    },
+    {
+      "name": "Field (day)",
+      "kind": "input",
+      "refersTo": "input-day",
+      "description": "Labeled 52px field on daylight grounds.",
+      "html": "<div class=\"ds-dia\"><label class=\"ds-campo\"><span>Nombre</span><input placeholder=\"Tu nombre\"></label></div>",
+      "css": ":host{--noche:#07090f;--noche-2:#0e1636;--cobalto:#1d3fa8;--cobalto-osc:#16318a;--rosa:#e88aa0;--rosa-claro:#f6c3cf;--durazno:#ffd9c2;--dia:#fff7ee;--blanco:#fff;--luz:#fff7ee;--luz-suave:#c9d2f5;--tinta:#0b1020;--tinta-suave:#3d4460;--radio:4px;--salida:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums}.ds-dia{background:var(--dia);padding:24px}.ds-campo{display:grid;gap:8px;max-width:320px}.ds-campo span{font:700 12px Archivo,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-suave)}.ds-campo input{min-height:52px;padding:8px 12px;border:1px solid #0b102040;border-radius:var(--radio);background:var(--blanco);color:var(--tinta);font:16px Archivo,system-ui,sans-serif;transition:border-color .2s,box-shadow .2s}.ds-campo input::placeholder{color:#6b7186}.ds-campo input:focus{outline:none;border-color:var(--cobalto);box-shadow:0 0 0 3px #1d3fa826}"
+    },
+    {
+      "name": "Field (night)",
+      "kind": "input",
+      "refersTo": "input-night",
+      "description": "Darkened field inside the hero form strip.",
+      "html": "<div class=\"ds-noche\"><label class=\"ds-campo-n\"><span>Ingreso</span><input type=\"date\"></label></div>",
+      "css": ":host{--noche:#07090f;--noche-2:#0e1636;--cobalto:#1d3fa8;--cobalto-osc:#16318a;--rosa:#e88aa0;--rosa-claro:#f6c3cf;--durazno:#ffd9c2;--dia:#fff7ee;--blanco:#fff;--luz:#fff7ee;--luz-suave:#c9d2f5;--tinta:#0b1020;--tinta-suave:#3d4460;--radio:4px;--salida:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums}.ds-noche{background:var(--noche);padding:24px}.ds-campo-n{display:grid;gap:8px;max-width:320px}.ds-campo-n span{font:700 12px Archivo,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--luz-suave)}.ds-campo-n input{min-height:52px;padding:8px 12px;border:1px solid #ffffff40;border-radius:var(--radio);background:#ffffff0f;color:var(--luz);color-scheme:dark;font:16px Archivo,system-ui,sans-serif;transition:border-color .2s,box-shadow .2s}.ds-campo-n input:focus{outline:none;border-color:var(--rosa);box-shadow:0 0 0 3px #e88aa033}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Fixed 64px night bar with half-sun wordmark and tracked uppercase links.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-marca\" href=\"#\"><svg width=\"26\" height=\"18\" viewBox=\"0 0 26 18\" aria-hidden=\"true\"><path d=\"M5 14a8 8 0 0 1 16 0Z\" fill=\"#e88aa0\"/><path d=\"M0 15.5h26\" stroke=\"#fff7ee\" stroke-width=\"1.5\"/></svg>FG Departamentos</a><nav class=\"ds-links\"><a href=\"#\">Fotos</a><a href=\"#\">El depto</a><a href=\"#\">Ubicación</a></nav></header>",
+      "css": ":host{--noche:#07090f;--noche-2:#0e1636;--cobalto:#1d3fa8;--cobalto-osc:#16318a;--rosa:#e88aa0;--rosa-claro:#f6c3cf;--durazno:#ffd9c2;--dia:#fff7ee;--blanco:#fff;--luz:#fff7ee;--luz-suave:#c9d2f5;--tinta:#0b1020;--tinta-suave:#3d4460;--radio:4px;--salida:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums}.ds-nav{height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 24px;background:var(--noche);color:var(--luz);border-bottom:1px solid #ffffff1a}.ds-marca{display:inline-flex;align-items:center;gap:12px;font:700 15px Archivo,system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;color:inherit}.ds-links{display:flex;gap:24px}.ds-links a{font:600 13px Archivo,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--luz-suave);padding:8px 0;transition:color .2s}.ds-links a:hover{color:var(--luz)}.ds-links a:focus-visible,.ds-marca:focus-visible{outline:2px solid var(--rosa);outline-offset:3px}"
+    },
+    {
+      "name": "Availability Days",
+      "kind": "custom",
+      "refersTo": "day-free",
+      "description": "Free, booked, in-range and selected calendar days.",
+      "html": "<div class=\"ds-dia\"><div class=\"ds-mes\"><button class=\"ds-d ds-libre\">12</button><button class=\"ds-d ds-ocup\" disabled><s>13</s></button><button class=\"ds-d ds-ext\">14</button><button class=\"ds-d ds-rango\">15</button><button class=\"ds-d ds-ext\">16</button><button class=\"ds-d ds-libre\">17</button></div></div>",
+      "css": ":host{--noche:#07090f;--noche-2:#0e1636;--cobalto:#1d3fa8;--cobalto-osc:#16318a;--rosa:#e88aa0;--rosa-claro:#f6c3cf;--durazno:#ffd9c2;--dia:#fff7ee;--blanco:#fff;--luz:#fff7ee;--luz-suave:#c9d2f5;--tinta:#0b1020;--tinta-suave:#3d4460;--radio:4px;--salida:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums}.ds-dia{background:var(--dia);padding:24px}.ds-mes{display:grid;grid-template-columns:repeat(6,48px);gap:4px}.ds-d{aspect-ratio:1.15;min-height:40px;border:1px solid transparent;border-radius:var(--radio);background:transparent;font:600 15px Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums;cursor:pointer;transition:background-color .15s,border-color .15s}.ds-libre{background:var(--blanco);border-color:#f0c9a8;color:var(--cobalto);font-weight:800}.ds-libre:hover{border-color:var(--cobalto)}.ds-ocup{background:repeating-linear-gradient(-45deg,#f6dbe2 0 5px,#edc3ce 5px 6px);color:#8a5866;cursor:default}.ds-rango{background:#1d3fa81f;border-color:var(--cobalto)}.ds-ext{background:var(--cobalto);border-color:var(--cobalto);color:var(--blanco)}.ds-d:focus-visible{outline:2px solid var(--cobalto);outline-offset:3px}"
+    },
+    {
+      "name": "Horizon Line",
+      "kind": "custom",
+      "description": "The single ornament: hairline horizon with pink-peach glow rising into cobalt, gathering once on load.",
+      "html": "<div class=\"ds-cielo\"><div class=\"ds-horizonte\"></div></div>",
+      "css": ":host{--noche:#07090f;--noche-2:#0e1636;--cobalto:#1d3fa8;--cobalto-osc:#16318a;--rosa:#e88aa0;--rosa-claro:#f6c3cf;--durazno:#ffd9c2;--dia:#fff7ee;--blanco:#fff;--luz:#fff7ee;--luz-suave:#c9d2f5;--tinta:#0b1020;--tinta-suave:#3d4460;--radio:4px;--salida:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums}.ds-cielo{height:220px;background:linear-gradient(180deg,#0e1636,#16297a 60%,#1d3fa8);position:relative;overflow:hidden}.ds-horizonte{position:absolute;left:0;right:0;bottom:40px;height:1px;background:#fff7ee99}.ds-horizonte::before{content:'';position:absolute;left:0;right:0;bottom:0;height:180px;background:radial-gradient(70% 90% at 50% 100%,#ffd9c2e6 0%,#f3a9b4b3 22%,#e88aa066 42%,#e88aa000 70%),linear-gradient(0deg,#e88aa099 0%,#8a5fae55 30%,#1d3fa800 70%);transform-origin:50% 100%;animation:ds-amanecer 2.8s var(--salida) .15s both}.ds-horizonte::after{content:'';position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,#ffd9c200,#fff7ee 30%,#fff7ee 70%,#ffd9c200);box-shadow:0 0 24px 6px #ffd9c2aa}@keyframes ds-amanecer{from{opacity:0;transform:scaleY(.4)}}@media (prefers-reduced-motion:reduce){.ds-horizonte::before{animation:none}}"
+    },
+    {
+      "name": "Sun Rail",
+      "kind": "custom",
+      "description": "Fixed scroll rail where the sun rises and the clock advances from 05:52 to 09:30.",
+      "html": "<div class=\"ds-noche\"><div class=\"ds-riel\"><div class=\"ds-linea\"></div><div class=\"ds-sol\"><span class=\"ds-disco\"></span><span class=\"ds-hora\">07:14</span></div></div></div>",
+      "css": ":host{--noche:#07090f;--noche-2:#0e1636;--cobalto:#1d3fa8;--cobalto-osc:#16318a;--rosa:#e88aa0;--rosa-claro:#f6c3cf;--durazno:#ffd9c2;--dia:#fff7ee;--blanco:#fff;--luz:#fff7ee;--luz-suave:#c9d2f5;--tinta:#0b1020;--tinta-suave:#3d4460;--radio:4px;--salida:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;font-variant-numeric:tabular-nums}.ds-noche{background:var(--noche);padding:16px;display:flex;justify-content:flex-end}.ds-riel{position:relative;width:40px;height:220px;color:var(--luz)}.ds-linea{position:absolute;left:50%;top:0;bottom:0;width:1px;background:currentColor;opacity:.3}.ds-sol{position:absolute;left:0;right:0;bottom:40%;display:flex;flex-direction:column-reverse;align-items:center;gap:6px}.ds-disco{width:13px;height:13px;border-radius:50%;background:var(--rosa);box-shadow:0 0 0 4px #e88aa033,0 0 18px 4px #e88aa066}.ds-hora{font:700 12px Archivo,system-ui,sans-serif;letter-spacing:.08em;font-variant-numeric:tabular-nums}"
+    }
+  ],
+  "narrative": {
+    "northStar": "El ciclorama del amanecer",
+    "overview": "The page is one continuous lit backdrop, like a theater cyclorama at dawn. The top is the last hour of night over the sea at Cabo Corrientes; as you scroll the light rises through a cobalt horizon band, then dawn pink, then peach, until it reaches full morning day. Every section begins in the color the previous one ended in, so there are no hard cuts between sections, only the sky changing. The footer runs the sequence backwards and returns to night.\n\nThe world is made of light, not objects. Its only ornament is a thin horizon line with a pink-peach glow that gathers once when the page loads. Type is a single grotesque (Archivo) at large sizes in sentence case for headings, with spaced uppercase small labels and tabular numerals for times, dates and distances. Photographs are real and sit square-cornered-but-softened (4px) on the gradient. Action is pink on the night and cobalt on the day.\n\nThe world rejects the Airbnb-style listing template, the earlier black-and-gold luxury site, and the nautical-chart direction it replaced.",
+    "keyCharacteristics": [
+      "One unbroken vertical sky gradient: noche, cobalto, violeta, rosa, durazno, día, and back to noche in the footer.",
+      "Action color follows the light: rosa on dark ground, cobalto on light ground.",
+      "A single ornament: the horizon line with its glow.",
+      "One family, Archivo, from 12px labels to 96px display; tabular numerals everywhere.",
+      "A fixed sun rail on the right where the sun rises and the clock advances (05:52 to 09:30) with scroll."
+    ],
+    "rules": [
+      {
+        "name": "The Continuous Sky Rule",
+        "body": "Each section's background is a vertical gradient that starts at the exact color the previous section ended on. No section starts on a color its neighbor did not finish on, and there are no divider bands between sections.",
+        "section": "colors"
+      },
+      {
+        "name": "The Action Follows the Light Rule",
+        "body": "On night or cobalt ground the action is rosa with noche text; on pink, peach or day ground the action is cobalto with white text. Focus rings switch the same way (rosa on dark, cobalto on light).",
+        "section": "colors"
+      },
+      {
+        "name": "The Own Ink Rule",
+        "body": "Secondary text on a tinted ground uses that ground's ink (tinta-rosa on pink, tinta-durazno on peach, luz-suave on night), never a generic grey.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Clock Rule",
+        "body": "Body sets `font-variant-numeric: tabular-nums` globally; every hour, date and minute count aligns.",
+        "section": "typography"
+      },
+      {
+        "name": "The Closer Is Bigger Rule",
+        "body": "Distance numerals size from the minutes value (max(32px, 58px minus 2.3px per minute)) and the list is ordered by proximity.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tinted Shadow Rule",
+        "body": "Shadows are soft, negative-spread and tinted toward the ground they sit on (black on night, peach ink on peach, ink on day). No hard or offset shadows.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Ornament Rule",
+        "body": "The horizon line with its glow is the only decorative device. Glow belongs to light sources (horizon, sun) and nowhere else.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** start every section on the color the previous one ended on, and end the page by returning to night.",
+      "**Do** use rosa for action on night and cobalto for action on day, with focus rings following the same switch.",
+      "**Do** set headings in Archivo 800 sentence case with -0.03em tracking, and labels in 12px uppercase at 0.16em.",
+      "**Do** keep tabular numerals on every time, date and distance.",
+      "**Do** use the 4px radius on every rectangle and reserve circles for the sun and the floating button.",
+      "**Do** draw lists with hairline rules and use the custom 1.6-stroke line icons.",
+      "**Do** use the shared exit easing cubic-bezier(0.16, 1, 0.3, 1) for motion and make everything static under reduced motion."
+    ],
+    "donts": [
+      "**Don't** cut between sections with flat color blocks or divider bands.",
+      "**Don't** add a second ornament beside the horizon line; glows belong only to the horizon and the sun.",
+      "**Don't** use hard or offset shadows.",
+      "**Don't** fall back on the property-listing template (photo, button, icon cards), black-and-gold luxury, or nautical-chart devices.",
+      "**Don't** put cobalto actions on the night or rosa actions on the day.",
+      "**Don't** set secondary text in plain grey on tinted grounds; use that ground's ink."
+    ]
+  }
+}
